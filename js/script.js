@@ -56,9 +56,8 @@ let dataImageList = [
     ["i-loc-06-door-h","../img/door-to-city-h.png", null],
     ["i-loc-06-computer-h","../img/computer-h.png", null],
 
-
-
     ["naoki","../img/char_naoki_01.png", null],
+    ["plakat-prestupnika","../img/plakat_prestupnika_tochno.png", null],
 
     ["prop-car-01","../img/car_01.png", null],
     ["prop-car-02","../img/car_02.png", null],
@@ -289,6 +288,7 @@ let dialogueImageDrawn = false;
 let currentDialogueId = "";
 let currentDialogue = null;
 let dialogueList = null;
+let katanaImage = null;
 
 let loaderMaxItems = 0;
 let loaderNumOfItems = 0;
@@ -1228,6 +1228,13 @@ function interactWith(object, comment) {
             obj_s.objectActive = false;
             obj_h.objectVisible = false;
             obj_h.objectActive = false;
+
+            let diaX = jsScreen.width / 2 - dialogueImage.width / 2;
+            let diaY = 25;
+
+            screenContext.setTransform(1, 0, 0, 1, 0, 0);
+            screenContext.drawImage(katanaImage, diaX+90, diaY, 350, 425);
+
             openDialogue("dia-30");
             break;
         case "loc-00-stripes-h":
@@ -1280,7 +1287,7 @@ function interactWith(object, comment) {
                 openDialogue("dia-60");
             }
             break;
-        case "loc-03-vip-h": openDialogue("dia-61"); break;
+        case "loc-03-vip-h": openDialogue("dia-51"); break;
         case "loc-03-barmen-h":
             openDialogue("dia-80");
             break;
@@ -1409,17 +1416,13 @@ window.onload = function(e) {
     sceneList[5].sceneLoad(description_Scene_05);
     sceneList[6].sceneLoad(description_Scene_06);
 
-    currentScene = sceneList[0];
-
+    currentScene = sceneList[3];
 
     for(let diaNumber = 0; diaNumber < dataDialogue.length; diaNumber++)
         dialogueList.push(new classDialogue(dataDialogue[diaNumber]));
 
-
-
     // menu
     menuMain = new classMenu();
-
 
     // getting objects
     imgBackground = dataGetFromArray(dataImageList, "bg-grid") [2];
@@ -1429,6 +1432,7 @@ window.onload = function(e) {
     menuMain.menuLogo = dataGetFromArray(dataImageList, "m-logo") [2];
     //menuMain.menuList = dataGetFromArray(dataImageList, "m-text") [2];
     dialogueImage = dataGetFromArray(dataImageList, "m-dialogue") [2];
+    katanaImage = dataGetFromArray(dataImageList, "plakat-prestupnika") [2];
 
     charNaoki = currentScene.objectGet("naoki");
 
