@@ -78,7 +78,6 @@ let dataDialogue = [
     ["dia-02", "Стриптизёрша", "Спасибо, пусть это останется между нами. Это тебе.", [
         ["","Закрыть"]]],
 
-
     ["dia-20", "Наоки", "Бедняжка... Уже седьмой случай за этот месяц", [
         ["","Закрыть"]]],
 
@@ -91,11 +90,17 @@ let dataDialogue = [
     ["dia-50", "Наоки", "Мне чего-то не хватает.", [
         ["","Закрыть"]]],
 
+    ["dia-51", "Наоки", "Cлишком темно, ничего не видно", [
+        ["","Закрыть"]]],
+
     ["dia-60", "Вышибала", "Чего встала?", [
         ["","Закрыть"]]],
 
     ["dia-61", "Вышибала", "Теперь другое дело", [
         ["","Закрыть"]]],
+
+    ["dia-62", "Вышибала", "Окей, но я за ним слежу", [
+        ["guard-dia-end","Закрыть"]]],
 
     ["dia-70", "Наоки", "Хей, как поживаешь?", [
         ["to-dia-71","Далее"]]],
@@ -114,6 +119,30 @@ let dataDialogue = [
 
     ["dia-75", "Иоши", "Было бы круто, обожаю тебя. Держи, может пригодиться", [
         ["","Закрыть"]]],
+
+    ["dia-80", "Бармен", "Здаров, Наоки. Давно ты ко мне не заглядывала", [
+        ["to-dia-81","Далее"]]],
+
+    ["dia-81", "Наоки", "Ты же знаешь, с Юки нам тяжело. Еще и выгнали с работы", [
+        ["to-dia-82","Далее"]]],
+
+    ["dia-82", "Бармен", "Понятно, что расскажешь?", [
+        ["to-dia-83","Ленты"],["to-dia-84","Новая работа"],["to-dia-85","Дела с баром"],["to-dia-86","Иоши"],["to-dia-87","Мутный"],["","Закрыть"]]],
+
+    ["dia-83", "Бармен", "Черт возьми, они уже совсем страх потеряли. Жаль парнишку,\nон был моим лучшим клиентом", [
+        ["to-dia-82","Закрыть"]]],
+
+    ["dia-84", "Бармен", "Я всегда рад тебе помочь с подработкой", [
+        ["to-dia-82","Закрыть"]]],
+
+    ["dia-85", "Бармен", "В последнее время только эти ходят… В округе все закрываются,\nа в центре слишком дорого. Компания хочет выкупить бар,\nне нравится мне все это", [
+        ["to-dia-82","Закрыть"]]],
+
+    ["dia-86", "Бармен", "Ты знаешь правила. Только под твою ответственность и потому\nчто мы давно знакомы", [
+        ["to-dia-82","Закрыть"]]],
+
+    ["dia-87", "Бармен", "После смерти главы в компании работают одни бандиты.\nНе удивительно, что их рожи на каждом столбе", [
+        ["to-dia-82","Закрыть"]]],
 ];
 
 // id, offsetx, offsety, length, timeout
@@ -140,9 +169,9 @@ let description_Door_00_04 = ["door-00-04-h","loc-04",64,995];
 let description_Door_02_00 = ["door-02-00-h","loc-00",2431,924];
 let description_Door_02_03 = ["loc-02-door-h","loc-03",64,954];
 let description_Door_03_02 = ["door-03-02-h","loc-02",892,954];
-let description_Door_04_00 = ["door-04-00-h","loc-00",892,954];
-let description_Door_04_05 = ["door-04-05-h","loc-05",892,954];
-let description_Door_05_04 = ["door-05-04-h","loc-04",892,954];
+let description_Door_04_00 = ["door-04-00-h","loc-00",1150,954];
+let description_Door_04_05 = ["door-04-05-h","loc-05",64,954];
+let description_Door_05_04 = ["door-05-04-h","loc-04",2431,954];
 let description_Door_05_06 = ["loc-05-door-h","loc-06",892,954];
 let description_Door_06_05 = ["loc-06-door-h","loc-05",892,954];
 
@@ -158,8 +187,8 @@ let description_Scene_00 = [
     ["door-00-01-h",    "door",    false,true,    0,    0,800,    0,0,128,128,    0,0,0,    1,1,1,    "i-mark-h",    "",    0,0,false,    description_Door_00_01],
     ["door-00-02",    "static",    true,true,    0,    2431,800,    0,0,0,0,    0,0,0,    1,1,1,    "i-mark",    "",    0,0,false,    null],
     ["door-00-02-h",    "door",    false,true,    0,    2431,800,    0,0,128,128,    0,0,0,    1,1,1,    "i-mark-h",    "",    0,0,false,    description_Door_00_02],
-    ["door-00-04",    "static",    true,true,    0,    1150,700,    0,0,0,0,    0,0,0,    1,1,1,    "i-mark",    "",    0,0,false,    null],
-    ["door-00-04-h",    "door",    false,true,    0,    1150,700,    0,0,128,128,    0,0,0,    1,1,1,    "i-mark-h",    "",    0,0,false,    description_Door_00_04],
+    ["door-00-04",    "static",    false,false,    0,    1150,700,    0,0,0,0,    0,0,0,    1,1,1,    "i-mark",    "",    0,0,false,    null],
+    ["door-00-04-h",    "door",    false,false,    0,    1150,700,    0,0,128,128,    0,0,0,    1,1,1,    "i-mark-h",    "",    0,0,false,    description_Door_00_04],
     ["loc-00-syringes",    "static",    true,true,    0,    2103,806,    0,0,73,66,    0,0,0,    1,1,1,    "i-loc-00-syringes",    "",    0,0,false,    null],
     ["loc-00-paper",    "static",    true,true,    0,    2331,803,    0,0,78,75,    0,0,0,    1,1,1,    "i-loc-00-paper",    "",    0,0,false,    null],
     ["loc-00-hooker-h",    "interactive",    false,true,    0,    283,357,    0,0,151,501,    0,0,0,    1,1,1,    "i-loc-00-hooker-h",    "",    0,0,false,    null],
@@ -191,6 +220,7 @@ let description_Scene_02 = [
     ["naoki",    "static",    true,true,    0,    868,924,    0,0,0,0,    128,345,0,    1,1,1.55,    "naoki",    "",    256,345,true,    dataNaokiAnimations],
 ];
 
+
 let description_Scene_03 = [
     ["loc-03",    64,1800,    0,0,2560,1080],
     ["loc-03-bar",    "static",    true,true,    0,    0,0,    0,0,0,0,    0,0,0,    1,1,1,    "i-loc-03-bar",    "",    0,0,false,    null],
@@ -200,6 +230,7 @@ let description_Scene_03 = [
     ["loc-03-vip-h",    "interactive",    false,true,    0,    429,0,    0,0,698,688,    0,0,0,    1,1,1,    "i-loc-03-vip-h",    "",    0,0,false,    null],
     ["naoki",    "static",    true,true,    0,    868,924,    0,0,0,0,    128,345,0,    1,1,1.55,    "naoki",    "",    256,345,true,    dataNaokiAnimations],
 ];
+
 
 let description_Scene_04 = [
     ["loc-04",    64,2496,    0,0,2560,1080],
@@ -215,11 +246,11 @@ let description_Scene_04 = [
 
 
 let description_Scene_05 = [
-    ["loc-05",    64,2496,    0,0,2560,1080],
+    ["loc-05",    64,2296,    0,0,2560,1080],
     ["i-loc-05-city-l00",    "static",    true,true,    0,    0,0,    0,0,0,0,    0,0,0,    1,1,1,    "i-loc-05-city-l00",    "",    0,0,false,    null],
     ["i-loc-05-city-l01",    "static",    true,true,    0,    0,0,    0,0,0,0,    0,0,0,    1,1,1,    "i-loc-05-city-l01",    "",    0,0,false,    null],
-    ["door-05-04",    "static",    true,true,    0,    0,900,    0,0,0,0,    0,0,0,    1,1,1,    "i-mark",    "",    0,0,false,    null],
-    ["door-05-04-h",    "door",    false,true,    0,    0,900,    0,0,128,128,    0,0,0,    1,1,1,    "i-mark-h",    "",    0,0,false,    description_Door_05_04],
+    ["door-05-04",    "static",    true,true,    0,    0,840,    0,0,0,0,    0,0,0,    1,1,1,    "i-mark",    "",    0,0,false,    null],
+    ["door-05-04-h",    "door",    false,true,    0,    0,840,    0,0,128,128,    0,0,0,    1,1,1,    "i-mark-h",    "",    0,0,false,    description_Door_05_04],
     ["loc-05-door-h",    "door",    false,true,    0,    2203,452,    0,0,189,459,    0,0,0,    1,1,1,    "i-loc-05-door-h",    "",    0,0,false,    description_Door_05_06],
     ["naoki",    "static",    true,true,    0,    0,0,    0,0,0,0,    128,345,0,    1,1,1.3,    "naoki",    "",    256,345,true,    dataNaokiAnimations],
     ["i-loc-05-city-l02",    "static",    true,true,    0,    0,0,    0,0,0,0,    0,0,0,    1,1,1,    "i-loc-05-city-l02",    "",    0,0,false,    null],
@@ -232,7 +263,7 @@ let description_Scene_06 = [
     ["loc-06-apartments-l01",    "static",    true,true,    0,    0,0,    0,0,0,0,    0,0,0,    1,1,1,    "i-loc-06-apartments-l01",    "",    0,0,false,    null],
     ["loc-06-door-h",    "door",    false,true,    0,    43,385,    0,0,121,647,    0,0,0,    1,1,1,    "i-loc-06-door-h",    "",    0,0,false,    description_Door_06_05],
     ["loc-06-computer-h",    "interactive",    false,true,    0,    1024,265,    0,0,189,459,    0,0,0,    1,1,1,    "i-loc-06-computer-h",    "",    0,0,false,    null],
-    ["naoki",    "static",    true,true,    0,    0,0,    0,0,0,0,    128,345,0,    1,1,1.3,    "naoki",    "",    256,345,true,    dataNaokiAnimations],
+    ["naoki",    "static",    true,true,    0,    0,0,    0,0,0,0,    128,345,0,    1,1,1.55,    "naoki",    "",    256,345,true,    dataNaokiAnimations],
 ];
 
 
@@ -282,7 +313,11 @@ let naoki_have_syringes = false;
 let naoki_have_clip = false;
 let naoki_have_amulet = false;
 let naoki_have_nark = false;
-
+let naoki_talk_ab_stripes = false;
+let naoki_talk_ab_job = false;
+let naoki_talk_ab_bar = false;
+let naoki_talk_ab_yoshi = false;
+let naoki_talk_ab_katana = false;
 
 class classUserView {
     constructor() {
@@ -666,7 +701,7 @@ class classScene {
 
     objectGet(id) {
         for(let iObject = 0; iObject < this.objectArray.length; iObject++) {
-            console.log(this.objectArray[iObject].objectId + " | " + id);
+            //console.log(this.objectArray[iObject].objectId + " | " + id);
             if(this.objectArray[iObject].objectId === id) {return this.objectArray[iObject];}
         }
     }
@@ -847,12 +882,12 @@ function initScreen() {
         if(hoverObj != null) jsScreen.style.cursor = "pointer";
         else jsScreen.style.cursor = "default";
 
-        if(mouseRightIsActive) {
-            jsScreen.style.cursor = "grabbing";
-            //console.log("m calc : " + cameraXPos + " = - (" + mousePosX + " - " + mousePosXEvStart + ")");
-            userView.cameraXPos -= (userView.mousePosX - mousePosXEvStart) / userView.cameraZoom;
-            userView.cameraYPos -= (userView.mousePosY - mousePosYEvStart) / userView.cameraZoom;
-        }
+        //if(mouseRightIsActive) {
+        //    jsScreen.style.cursor = "grabbing";
+        //    //console.log("m calc : " + cameraXPos + " = - (" + mousePosX + " - " + mousePosXEvStart + ")");
+        //    userView.cameraXPos -= (userView.mousePosX - mousePosXEvStart) / userView.cameraZoom;
+        //    userView.cameraYPos -= (userView.mousePosY - mousePosYEvStart) / userView.cameraZoom;
+        //}
     };
 
     jsScreen.onmousedown = function(e) {
@@ -890,14 +925,14 @@ function initScreen() {
     jsScreen.onwheel = function(e) {
         e.preventDefault();
 
-        if(isDialogueDisplayed === true) {
+        //if(isDialogueDisplayed === true) {
 
-        } else {
-            userView.cameraZoom *= e.deltaY < 0 ? 1.25 : 0.75;
+        //} else {
+            //userView.cameraZoom *= e.deltaY < 0 ? 1.25 : 0.75;
 
-            if(userView.cameraZoom < 0.25) userView.cameraZoom = 0.25;
-            if(userView.cameraZoom > 5) userView.cameraZoom = 5;
-        }
+        //    if(userView.cameraZoom < 0.25) userView.cameraZoom = 0.25;
+        //    if(userView.cameraZoom > 5) userView.cameraZoom = 5;
+        //}
     };
 
     jsScreen.onmouseleave = function(e) {
@@ -944,8 +979,8 @@ function initScreen() {
         switch(e.code) {
             case "Escape":
                 //isMenuDisplayed = !isMenuDisplayed;
-                isDialogueDisplayed = !isDialogueDisplayed;
-                dialogueImageDrawn = false;
+                //isDialogueDisplayed = !isDialogueDisplayed;
+                //dialogueImageDrawn = false;
                 break;
             case "KeyA":
                 if(charNaokiAnim === 3) {
@@ -1085,26 +1120,24 @@ function dialogueDraw(diaX, diaY) {
     screenContext.fillRect(diaX + 23, diaY + 72, 493, 105);
 
     screenContext.fillStyle = "rgba(200,200,200,1)";
-    screenContext.font = "24px calibri";
-    screenContext.fillText(currentDialogue.dialoguePerson, diaX + 28, diaY + 48);
-    screenContext.font = "18px calibri";
+    screenContext.font = "24px century gothic";
+    screenContext.fillText(currentDialogue.dialoguePerson, diaX + 185, diaY + 48);
+    screenContext.font = "14px century gothic";
 
     let diaText = currentDialogue.dialogueText.split('\n');
     let diaTxtOffset = diaY*1 + 90;
 
     let diaTextI = 0;
     for(; diaTextI < diaText.length; diaTextI++) {
-        diaTxtOffset = diaTxtOffset + diaTextI*18;
         screenContext.fillText(diaText[diaTextI], diaX + 28, diaTxtOffset);
+        diaTxtOffset = diaTxtOffset + 14;
     }
 
-    diaTxtOffset = diaTxtOffset + 28;
+    diaTxtOffset = diaTxtOffset + 10;
 
     let diaOptI = 0;
     if(currentDialogue.dialogueOptions != null) for(; diaOptI < currentDialogue.dialogueOptions.length; diaOptI++) {
-        diaTxtOffset = diaTxtOffset + diaOptI*18;
-
-        if(userView.mousePosX > diaX + 23 && userView.mousePosX < diaX + 516 && userView.mousePosY < diaTxtOffset && userView.mousePosY > diaTxtOffset - 18)
+        if(userView.mousePosX > diaX + 23 && userView.mousePosX < diaX + 516 && userView.mousePosY < diaTxtOffset && userView.mousePosY > diaTxtOffset - 14)
             screenContext.fillStyle = "rgba(255,255,255,1)";
         else
             screenContext.fillStyle = "rgb(220,161,183)";
@@ -1113,7 +1146,10 @@ function dialogueDraw(diaX, diaY) {
         currentDialogue.dialogueOptions[diaOptI].optionTop = diaTxtOffset;
         currentDialogue.dialogueOptions[diaOptI].optionLeft = diaX + 23;
         currentDialogue.dialogueOptions[diaOptI].optionWidth = 493;
-        currentDialogue.dialogueOptions[diaOptI].optionHeight = 18;
+        currentDialogue.dialogueOptions[diaOptI].optionHeight = 15;
+
+        diaTxtOffset = diaTxtOffset + 14;
+        if(diaOptI === 4) break;
     }
 }
 
@@ -1132,7 +1168,25 @@ function interactWith(object, comment) {
             //console.log(this.objectArray[iObject].objectId + " | " + id);
             if(sceneList[iScene].sceneId === currentDoor.locationDst) {
                 currentScene = sceneList[iScene];
+                let charNaokiLast = charNaoki;
+
+                charNaokiLast.objectVectorMovement[0] = 0;
+
+                if(charNaokiAnim === 3) {
+                    charNaokiAnim = 1;
+                    charNaokiLast.objectAnimationCurrent = charNaokiLast.objectAnimationList[charNaokiAnim];
+                    charNaokiLast.objectAnimationUpd = true;
+                } else if(charNaokiAnim === 2) {
+                    charNaokiAnim = 0;
+                    charNaokiLast.objectAnimationCurrent = charNaokiLast.objectAnimationList[charNaokiAnim];
+                    charNaokiLast.objectAnimationUpd = true;
+                }
+
                 charNaoki = currentScene.objectGet("naoki");
+
+                charNaoki.objectAnimationUpd = charNaokiLast.objectAnimationUpd;
+                charNaoki.objectAnimationCurrent = charNaokiLast.objectAnimationCurrent;
+
                 charNaoki.objectPositionX = currentDoor.locationX;
                 charNaoki.objectPositionY = currentDoor.locationY;}
         }
@@ -1185,24 +1239,21 @@ function interactWith(object, comment) {
         case "door-00-01-h":
             if (loc_01_is_visited === false) {
                 loc_01_is_visited = true;
-                //drawCall();
-                /*openDialogue("dia-40");*/}
+                drawCall();
+                openDialogue("dia-40");}
             break;
         case "loc-01-car-h":
             if(naoki_have_syringes === true && naoki_have_clip === true) {
-                console.log("ало блять " + currentScene + currentScene.sceneId);
-                console.log("ало блить " + currentScene.objectArray);
                 obj_h = currentScene.objectGet("loc-01-car-h");
                 obj_h.objectVisible = false;
                 obj_h.objectActive = false;
-                obj_h = currentScene.objectGet("loc-00-hooker-h");
+                obj_h = sceneList[0].objectGet("loc-00-hooker-h");
                 obj_h.objectVisible = false;
                 obj_h.objectActive = true;
                 naoki_have_nark = true;
                 console.log("naoki_have_nark" + naoki_have_nark);
             }
             else {
-                console.log("ало бляяяяяяяяяяяяяять " + currentScene + currentScene.sceneId);
                 openDialogue("dia-50");
             }
             break;
@@ -1215,19 +1266,43 @@ function interactWith(object, comment) {
             break;
 
         case "loc-02-guard-h":
-            if(naoki_have_amulet === true) {
+            if(naoki_talk_ab_yoshi === true) {
+                openDialogue("dia-62");
+            } else if(naoki_have_amulet === true) {
                 obj_h = currentScene.objectGet("loc-02-guard-h");
+                obj_h.objectVisible = false;
                 obj_h.objectActive = false;
 
-                obj_h = currentScene.objectGet("i-loc-02-door-h");
+                obj_h = currentScene.objectGet("loc-02-door-h");
                 obj_h.objectActive = true;
                 openDialogue("dia-61");
             } else {
                 openDialogue("dia-60");
             }
-
+            break;
+        case "loc-03-vip-h": openDialogue("dia-61"); break;
+        case "loc-03-barmen-h":
+            openDialogue("dia-80");
             break;
     }
+}
+
+
+function getRidOfOption(diaId, option) {
+    let dia = null;
+    let optid = 0;
+
+    for(let iDia = 0; iDia < dialogueList.length; iDia++)
+        if(dialogueList[iDia].dialogueId === diaId)
+            dia = dialogueList[iDia];
+
+    if(dia === null) return;
+
+    for(let iDia = 0; iDia < dia.dialogueOptions.length; iDia++)
+        if(dia.dialogueOptions[iDia].optionTarget === option)
+            optid = iDia;
+
+    dia.dialogueOptions.splice(optid,1);
 }
 
 
@@ -1243,6 +1318,8 @@ function interactDialogue(mouX, mouY) {
             currentOption = currentDialogue.dialogueOptions[diaOptI];
     }
 
+    let guard = null;
+
     if(currentOption === null) return;
     switch(currentOption.optionTarget) {
         case "to-dia-01": openDialogue("dia-01"); break;
@@ -1251,6 +1328,40 @@ function interactDialogue(mouX, mouY) {
         case "to-dia-73": openDialogue("dia-73"); break;
         case "to-dia-74": openDialogue("dia-74"); break;
         case "to-dia-75": openDialogue("dia-75"); naoki_have_clip = true; break;
+
+        case "to-dia-81": openDialogue("dia-81");break;
+        case "to-dia-83": openDialogue("dia-83"); getRidOfOption("dia-82", "to-dia-83"); naoki_talk_ab_stripes = true; break;
+        case "to-dia-84": openDialogue("dia-84"); getRidOfOption("dia-82", "to-dia-84"); naoki_talk_ab_job = true; break;
+        case "to-dia-85": openDialogue("dia-85"); getRidOfOption("dia-82", "to-dia-85"); naoki_talk_ab_bar = true; break;
+        case "to-dia-86": openDialogue("dia-86");
+            getRidOfOption("dia-82", "to-dia-86");
+            naoki_talk_ab_yoshi = true;
+            guard = sceneList[2].objectGet("loc-02-guard-h");
+            guard.objectActive = true;
+            break;
+        case "to-dia-87": openDialogue("dia-87"); getRidOfOption("dia-82", "to-dia-87");  naoki_talk_ab_katana = true; break;
+        case "to-dia-82":
+            if( naoki_talk_ab_stripes === true &&
+                naoki_talk_ab_job === true &&
+                naoki_talk_ab_bar === true &&
+                naoki_talk_ab_yoshi === true &&
+                naoki_talk_ab_katana === true)
+            {
+                isDialogueDisplayed = false;
+                let barmen = currentScene.objectGet("loc-03-barmen-h");
+                barmen.objectVisible = false;
+                barmen.objectActive = false;
+            }
+            else openDialogue("dia-82");
+            break;
+
+        case "guard-dia-end":
+            guard = sceneList[2].objectGet("loc-02-guard-h");
+            guard.objectActive = false;
+            guard.objectVisible = false;
+            isDialogueDisplayed = false;
+            break;
+
         default: isDialogueDisplayed = false; break;
     }
 }
