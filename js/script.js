@@ -1416,7 +1416,7 @@ window.onload = function(e) {
     sceneList[5].sceneLoad(description_Scene_05);
     sceneList[6].sceneLoad(description_Scene_06);
 
-    currentScene = sceneList[3];
+    currentScene = sceneList[0];
 
     for(let diaNumber = 0; diaNumber < dataDialogue.length; diaNumber++)
         dialogueList.push(new classDialogue(dataDialogue[diaNumber]));
