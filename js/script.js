@@ -71,17 +71,17 @@ let dataDialogue = [
     ["dia-00", "Стриптизёрша", "Этот кусок говна тебя выгнал? На этой неделе ему\nзадерживают поставку, теперь всех увольняет.", [
         ["to-dia-01","Далее"]]],
 
-    ["dia-01", "Стриптизёрша", "Слушай, в моей ласточке остались кое-какие вещички...\nВ долгу не останусь", [
+    ["dia-01", "Стриптизёрша", "Слушай, в моей ласточке остались кое-какие вещички...\nВ долгу не останусь.", [
         ["","Закрыть"]]],
 
     ["dia-02", "Стриптизёрша", "Спасибо, пусть это останется между нами. Это тебе.", [
-        ["","Закрыть"]]],
+        ["to-dia-f4","Закрыть"]]],
 
-    ["dia-20", "Наоки", "Бедняжка... Уже седьмой случай за этот месяц", [
+    ["dia-20", "Наоки", "Бедняжка... Уже седьмой случай за этот месяц.", [
         ["","Закрыть"]]],
 
     ["dia-30", "Наоки", "Хмм...", [
-        ["","Закрыть"]]],
+        ["to-dia-f2","Закрыть"]]],
 
     ["dia-40", "Наоки", "Раньше сюда приходили сливки общества, теперь же остались\nтолько торчки.", [
         ["","Закрыть"]]],
@@ -89,16 +89,19 @@ let dataDialogue = [
     ["dia-50", "Наоки", "Мне чего-то не хватает.", [
         ["","Закрыть"]]],
 
-    ["dia-51", "Наоки", "Cлишком темно, ничего не видно", [
+    ["dia-51", "Наоки", "Cлишком темно, ничего не видно.", [
         ["","Закрыть"]]],
 
     ["dia-60", "Вышибала", "Чего встала?", [
         ["","Закрыть"]]],
 
-    ["dia-61", "Вышибала", "Теперь другое дело", [
+    ["dia-61", "Вышибала", "Теперь другое дело.", [
         ["","Закрыть"]]],
 
-    ["dia-62", "Вышибала", "Окей, но я за ним слежу", [
+    ["dia-62", "Наоки", "Иоши разрешили зайти.", [
+        ["to-dia-63","Далее"]]],
+
+    ["dia-63", "Вышибала", "Окей, но я за ним слежу.", [
         ["guard-dia-end","Закрыть"]]],
 
     ["dia-70", "Наоки", "Хей, как поживаешь?", [
@@ -110,38 +113,97 @@ let dataDialogue = [
     ["dia-72", "Наоки", "За что?", [
         ["to-dia-73","Далее"]]],
 
-    ["dia-73", "Иоши", "Я не выгляжу как их типичные клиенты, прикинь", [
+    ["dia-73", "Иоши", "Я не выгляжу как их типичные клиенты, прикинь.", [
         ["to-dia-74","Далее"]]],
 
-    ["dia-74", "Наоки", "Я могу договориться", [
+    ["dia-74", "Наоки", "Я могу договориться.", [
         ["to-dia-75","Далее"]]],
 
-    ["dia-75", "Иоши", "Было бы круто, обожаю тебя. Держи, может пригодиться", [
-        ["","Закрыть"]]],
+    ["dia-75", "Иоши", "Было бы круто, обожаю тебя. Держи, может пригодиться.", [
+        ["to-dia-f5","Закрыть"]]],
 
-    ["dia-80", "Бармен", "Здаров, Наоки. Давно ты ко мне не заглядывала", [
+    ["dia-80", "Бармен", "Здаров, Наоки. Давно ты ко мне не заглядывала.", [
         ["to-dia-81","Далее"]]],
 
-    ["dia-81", "Наоки", "Ты же знаешь, с Юки нам тяжело. Еще и выгнали с работы", [
+    ["dia-81", "Наоки", "Ты же знаешь, с Юки нам тяжело. Еще и выгнали с работы.", [
         ["to-dia-82","Далее"]]],
 
     ["dia-82", "Бармен", "Понятно, что расскажешь?", [
         ["to-dia-83","Ленты"],["to-dia-84","Новая работа"],["to-dia-85","Дела с баром"],["to-dia-86","Иоши"],["to-dia-87","Мутный"],["","Закрыть"]]],
 
-    ["dia-83", "Бармен", "Черт возьми, они уже совсем страх потеряли. Жаль парнишку,\nон был моим лучшим клиентом", [
+    ["dia-83", "Бармен", "Черт возьми, они уже совсем страх потеряли. Жаль парнишку,\nон был моим лучшим клиентом.", [
         ["to-dia-82","Закрыть"]]],
 
-    ["dia-84", "Бармен", "Я всегда рад тебе помочь с подработкой", [
+    ["dia-84", "Бармен", "Я всегда рад тебе помочь с подработкой.", [
         ["to-dia-82","Закрыть"]]],
 
-    ["dia-85", "Бармен", "В последнее время только эти ходят… В округе все закрываются,\nа в центре слишком дорого. Компания хочет выкупить бар,\nне нравится мне все это", [
+    ["dia-85", "Бармен", "В последнее время только эти ходят… В округе все закрываются,\nа в центре слишком дорого. Компания хочет выкупить бар,\nне нравится мне все это.", [
         ["to-dia-82","Закрыть"]]],
 
-    ["dia-86", "Бармен", "Ты знаешь правила. Только под твою ответственность и потому\nчто мы давно знакомы", [
+    ["dia-86", "Бармен", "Ты знаешь правила. Только под твою ответственность и потому\nчто мы давно знакомы.", [
         ["to-dia-82","Закрыть"]]],
 
-    ["dia-87", "Бармен", "После смерти главы в компании работают одни бандиты.\nНе удивительно, что их рожи на каждом столбе", [
+    ["dia-87", "Бармен", "После смерти главы в компании работают одни бандиты.\nНе удивительно, что их рожи на каждом столбе.", [
         ["to-dia-82","Закрыть"]]],
+
+    ["dia-90", "Мутный", "Ну привет, красотка.", [
+        ["to-dia-91","Далее"]]],
+
+    ["dia-91", "Наоки", "Что тебе надо?", [
+        ["to-dia-92","Далее"]]],
+
+    ["dia-92", "Мутный", "Вот захотел повидаться хе-хе. Ты знала, что теперь знаменита\nв наших кругах? Только вот многие готовы отдать за твою голову\nкругленькую сумму. Ты бы не ходила одна по темным переулкам.", [
+        ["to-dia-93","Далее"]]],
+
+    ["dia-93", "Наоки", "Я не делала этого, ты же знаешь.", [
+        ["to-dia-94","Далее"]]],
+
+    ["dia-94", "Мутный", "Сладкая, ты представить не можешь сколько мне платят\nза молчание.", [
+        ["to-dia-95","Далее"]]],
+
+    ["dia-95", "Наоки", "Проваливай отсюда. Иначе слухи окажутся правдой.", [
+        ["to-dia-96","Далее"]]],
+
+    ["dia-96", "Мутный", "Воу, я бы не стал так со мной разговаривать. Знаешь,\nя бы на твоем месте поторопился домой, может встретишь кого\nинтересного хе-хе. И да, тебе привет от Шизуко.", [
+        ["to-dia-97","Далее"]]],
+
+    ["dia-97", "Наоки", "В иных условиях я посчитала бы это угрозой.", [
+        ["to-dia-98","Далее"]]],
+
+    ["dia-98", "Мутный", "Не хорошо это.", [
+        ["to-dia-99","Далее"]]],
+
+    ["dia-99", "Наоки", "Что именно?", [
+        ["to-dia-9a","Далее"]]],
+
+    ["dia-9a", "Мутный", "Сомневаться.", [
+        ["katana-dia-end","Закрыть"]]],
+
+    ["dia-a0", "Наоки", "Закрыто.", [
+        ["","Закрыть"]]],
+
+    ["dia-a1", "Наоки", "Вот дерьмо!!!", [
+        ["","Закрыть"]]],
+
+
+    ["dia-f1", "Наоки", "Получен предмет: Шприцы.", [
+        ["","Закрыть"]]],
+
+    ["dia-f2", "Наоки", "Получен предмет: Портрет \"мутного\".", [
+        ["","Закрыть"]]],
+
+    ["dia-f3", "Наоки", "Получен предмет: Странный порошок.", [
+        ["","Закрыть"]]],
+
+    ["dia-f4", "Наоки", "Получен предмет: Ожерелье.", [
+        ["","Закрыть"]]],
+
+    ["dia-f5", "Наоки", "Получен предмет: Скрепка.", [
+        ["","Закрыть"]]],
+
+
+    ["dia-ff", "Наоки", "На экране видно уведомление. На почту пришло видео.", [
+        ["the-end","Посмотреть видео"]]],
 ];
 
 // id, offsetx, offsety, length, timeout
@@ -168,11 +230,11 @@ let description_Door_00_04 = ["door-00-04-h","loc-04",64,995];
 let description_Door_02_00 = ["door-02-00-h","loc-00",2431,924];
 let description_Door_02_03 = ["loc-02-door-h","loc-03",64,954];
 let description_Door_03_02 = ["door-03-02-h","loc-02",892,954];
-let description_Door_04_00 = ["door-04-00-h","loc-00",1150,954];
+let description_Door_04_00 = ["door-04-00-h","loc-00",1150,924];
 let description_Door_04_05 = ["door-04-05-h","loc-05",64,954];
-let description_Door_05_04 = ["door-05-04-h","loc-04",2431,954];
-let description_Door_05_06 = ["loc-05-door-h","loc-06",892,954];
-let description_Door_06_05 = ["loc-06-door-h","loc-05",892,954];
+let description_Door_05_04 = ["door-05-04-h","loc-04",2231,995];
+let description_Door_05_06 = ["loc-05-door-h","loc-06",64,995];
+let description_Door_06_05 = ["loc-06-door-h","loc-05",2231,954];
 
 
 // Описание сцены и объекта сцены
@@ -236,8 +298,8 @@ let description_Scene_04 = [
     ["loc-04-pereulok",    "static",    true,true,    0,    0,0,    0,0,0,0,    0,0,0,    1,1,1,    "i-loc-04-pereulok",    "",    0,0,false,    null],
     ["door-04-00",    "static",    true,true,    0,    0,900,    0,0,0,0,    0,0,0,    1,1,1,    "i-mark",    "",    0,0,false,    null],
     ["door-04-00-h",    "door",    false,true,    0,    0,900,    0,0,128,128,    0,0,0,    1,1,1,    "i-mark-h",    "",    0,0,false,    description_Door_04_00],
-    ["door-04-05",    "static",    true,true,    0,    2231,900,    0,0,0,0,    0,0,0,    1,1,1,    "i-mark",    "",    0,0,false,    null],
-    ["door-04-05-h",    "door",    false,true,    0,    2231,900,    0,0,128,128,    0,0,0,    1,1,1,    "i-mark-h",    "",    0,0,false,    description_Door_04_05],
+    ["door-04-05",    "static",    false,false,    0,    2231,900,    0,0,0,0,    0,0,0,    1,1,1,    "i-mark",    "",    0,0,false,    null],
+    ["door-04-05-h",    "door",    false,false,    0,    2231,900,    0,0,128,128,    0,0,0,    1,1,1,    "i-mark-h",    "",    0,0,false,    description_Door_04_05],
     ["loc-04-closed-door-h",    "interactive",    false,true,    0,    967,239,    225,0,415,613,    0,0,0,    1,1,1,    "i-loc-04-closed-door-h",    "",    0,0,false,    null],
     ["loc-04-katana-guy-h",    "interactive",    false,true,    0,    1611,448,    0,0,238,449,    0,0,0,    1,1,1,    "i-loc-04-katana-guy-h",    "",    0,0,false,    null],
     ["naoki",    "static",    true,true,    0,    868,924,    0,0,0,0,    128,345,0,    1,1,1.55,    "naoki",    "",    256,345,true,    dataNaokiAnimations],
@@ -257,7 +319,7 @@ let description_Scene_05 = [
 
 
 let description_Scene_06 = [
-    ["loc-06",    64,2496,    0,0,2560,1080],
+    ["loc-06",    264,2296,    0,0,2560,1080],
     ["loc-06-apartments-l00",    "static",    true,true,    0,    0,0,    0,0,0,0,    0,0,0,    1,1,1,    "i-loc-06-apartments-l00",    "",    0,0,false,    null],
     ["loc-06-apartments-l01",    "static",    true,true,    0,    0,0,    0,0,0,0,    0,0,0,    1,1,1,    "i-loc-06-apartments-l01",    "",    0,0,false,    null],
     ["loc-06-door-h",    "door",    false,true,    0,    43,385,    0,0,121,647,    0,0,0,    1,1,1,    "i-loc-06-door-h",    "",    0,0,false,    description_Door_06_05],
@@ -318,6 +380,8 @@ let naoki_talk_ab_job = false;
 let naoki_talk_ab_bar = false;
 let naoki_talk_ab_yoshi = false;
 let naoki_talk_ab_katana = false;
+let naoki_saw_door = false;
+let naoki_talked_to_barmen = false;
 
 class classUserView {
     constructor() {
@@ -1195,10 +1259,10 @@ function interactWith(object, comment) {
     let obj_s = null;
     let obj_h = null;
 
-    console.log("you touched " + object.objectId);
+    //console.log("you touched " + object.objectId);
     switch (object.objectId) {
         case "loc-00-hooker-h":
-            console.log("naoki_have_nark " + naoki_have_nark);
+            //console.log("naoki_have_nark " + naoki_have_nark);
             if(naoki_have_nark === true) {
                 obj_h = currentScene.objectGet("loc-00-hooker-h");
                 obj_h.objectActive = false;
@@ -1219,6 +1283,7 @@ function interactWith(object, comment) {
             obj_s.objectActive = false;
             obj_h.objectVisible = false;
             obj_h.objectActive = false;
+            openDialogue("dia-f1");
             naoki_have_syringes = true;
             break;
         case "loc-00-paper-h":
@@ -1259,6 +1324,7 @@ function interactWith(object, comment) {
                 obj_h.objectActive = true;
                 naoki_have_nark = true;
                 console.log("naoki_have_nark" + naoki_have_nark);
+                openDialogue("dia-f3");
             }
             else {
                 openDialogue("dia-50");
@@ -1289,7 +1355,28 @@ function interactWith(object, comment) {
             break;
         case "loc-03-vip-h": openDialogue("dia-51"); break;
         case "loc-03-barmen-h":
-            openDialogue("dia-80");
+            if(naoki_talked_to_barmen === true) openDialogue("dia-82");
+            else openDialogue("dia-80");
+            break;
+
+        case "loc-04-katana-guy-h":
+            openDialogue("dia-90");
+            break;
+
+        case "loc-04-closed-door-h":
+            openDialogue("dia-a0");
+            break;
+
+        case "loc-05-door-h":
+            if(naoki_saw_door === true) ;
+            else {
+                openDialogue("dia-a1");
+                naoki_saw_door = true;
+            }
+            break;
+
+        case "loc-06-computer-h":
+            openDialogue("dia-ff");
             break;
     }
 }
@@ -1325,10 +1412,13 @@ function interactDialogue(mouX, mouY) {
             currentOption = currentDialogue.dialogueOptions[diaOptI];
     }
 
-    let guard = null;
+    let obj = null;
 
     if(currentOption === null) return;
     switch(currentOption.optionTarget) {
+        case "to-dia-f2": openDialogue("dia-f2"); break;
+        case "to-dia-f4": openDialogue("dia-f4"); break;
+        case "to-dia-f5": openDialogue("dia-f5"); break;
         case "to-dia-01": openDialogue("dia-01"); break;
         case "to-dia-71": openDialogue("dia-71"); break;
         case "to-dia-72": openDialogue("dia-72"); break;
@@ -1343,8 +1433,8 @@ function interactDialogue(mouX, mouY) {
         case "to-dia-86": openDialogue("dia-86");
             getRidOfOption("dia-82", "to-dia-86");
             naoki_talk_ab_yoshi = true;
-            guard = sceneList[2].objectGet("loc-02-guard-h");
-            guard.objectActive = true;
+            obj = sceneList[2].objectGet("loc-02-guard-h");
+            obj.objectActive = true;
             break;
         case "to-dia-87": openDialogue("dia-87"); getRidOfOption("dia-82", "to-dia-87");  naoki_talk_ab_katana = true; break;
         case "to-dia-82":
@@ -1355,18 +1445,48 @@ function interactDialogue(mouX, mouY) {
                 naoki_talk_ab_katana === true)
             {
                 isDialogueDisplayed = false;
-                let barmen = currentScene.objectGet("loc-03-barmen-h");
-                barmen.objectVisible = false;
-                barmen.objectActive = false;
+                obj = currentScene.objectGet("loc-03-barmen-h");
+                obj.objectVisible = false;
+                obj.objectActive = false;
             }
             else openDialogue("dia-82");
             break;
 
+        case "to-dia-63": openDialogue("dia-63"); break;
         case "guard-dia-end":
-            guard = sceneList[2].objectGet("loc-02-guard-h");
-            guard.objectActive = false;
-            guard.objectVisible = false;
+            obj = sceneList[2].objectGet("loc-02-guard-h");
+            obj.objectActive = false;
+            obj.objectVisible = false;
             isDialogueDisplayed = false;
+            obj = sceneList[0].objectGet("door-00-04");
+            obj.objectVisible = true;
+            obj.objectActive = true;
+            obj = sceneList[0].objectGet("door-00-04-h");
+            obj.objectVisible = false;
+            obj.objectActive = true;
+            break;
+
+        case "to-dia-91": openDialogue("dia-91");break;
+        case "to-dia-92": openDialogue("dia-92");break;
+        case "to-dia-93": openDialogue("dia-93");break;
+        case "to-dia-94": openDialogue("dia-94");break;
+        case "to-dia-95": openDialogue("dia-95");break;
+        case "to-dia-96": openDialogue("dia-96");break;
+        case "to-dia-97": openDialogue("dia-97");break;
+        case "to-dia-98": openDialogue("dia-98");break;
+        case "to-dia-99": openDialogue("dia-99");break;
+        case "to-dia-9a": openDialogue("dia-9a");break;
+        case "katana-dia-end":
+            obj = currentScene.objectGet("loc-04-katana-guy-h");
+            obj.objectActive = false;
+            obj.objectVisible = false;
+            isDialogueDisplayed = false;
+            obj = currentScene.objectGet("door-04-05");
+            obj.objectVisible = true;
+            obj.objectActive = true;
+            obj = currentScene.objectGet("door-04-05-h");
+            obj.objectVisible = false;
+            obj.objectActive = true;
             break;
 
         default: isDialogueDisplayed = false; break;
