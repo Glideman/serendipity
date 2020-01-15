@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, shrink-to-fit=no">
+
+        <!-- ДОКИ -->
+        <link rel="stylesheet" href="../css/styles.css" type="text/css">
+        <script type="text/javascript" src="../js/script_anim.js"></script>
+
+        <title>Animation sandbox</title>
+    </head>
+
+
+    <body>
+
+        <!-- ОКОШКО ИГРЫ -->
+        <div class="game-container">
+            <div class="preloader" id="preloader"></div>
+            <canvas class="js-screen" id="js-screen">Обновите браузер</canvas>
+
+            <div class="animation-form-container">
+                <input type="button" value="скрыть/показать настройки" onclick="triggerForm();">
+                <input type="button" value="скрыть/показать сетку" onclick="triggerGrid()">
+                <form id="animation-form" onsubmit="return false;">
+                    <input type="file" accept="image/png, image/jpeg" onchange="getImgFromInput(this);"><br>
+                    <input type="number" min="32" value="32" onchange="changeAnimSpriteWidth(this);">Ширина одного кадра<br>
+                    <input type="number" min="100" value="100" onchange="changeTimeout(this);">Задержка отображения (в миллисекундах)<br>
+                    <input type="button" value="play animation" onclick="animationPlay();">
+                    <input type="button" value="stop" onclick="animationStop();">
+                </form>
+            </div>
+        </div>
+
+    </body>
+</html>
