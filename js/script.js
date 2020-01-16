@@ -335,6 +335,7 @@ let description_Scene_06 = [
 let jsScreen = null;
 let screenContext = null;
 let preloader = null;
+let preloaderStatus = "";
 let imgBackground = null;
 
 let userView = null;
@@ -1047,13 +1048,10 @@ function resizeScreen() {
 
 function resourceOnLoad(e) {
     loaderNumOfItems++;
-
-    //preloader.innerHTML = "Loading... " + (loaderNumOfItems / loaderMaxItems * 100 | 0) + "%";
-
+    preloaderStatus = "Загрузка... " + (loaderNumOfItems / loaderMaxItems * 100 | 0) + "%";
+    drawCall();
     if(loaderNumOfItems === loaderMaxItems) {
         isPreloaderDisplayed = false;
-        //preloader.style.display = "none";
-        //drawCall();
     }
 }
 
@@ -1164,6 +1162,9 @@ function drawCall() {
             let bgY = (scrH-bgH) / 2;
 
             screenContext.drawImage(preloader, bgX, bgY, bgW, bgH);
+            screenContext.fillStyle = "white";
+            screenContext.font = "48px calibri";
+            screenContext.fillText(preloaderStatus,jsScreen.width/2,jsScreen.height-80);
         } else if(isDialogueDisplayed === true) {
             screenContext.setTransform(1, 0, 0, 1, 0, 0);
 
