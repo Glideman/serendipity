@@ -4,7 +4,7 @@
 
 // id, path, image
 let dataImageList = [
-    ["preloader","../preloader.jpg", null],
+    //["preloader","../preloader(2).jpg", null],
 
     ["m-background","../img/menu-bg.jpg", null],
     ["m-girl","../img/menu-girl.png", null],
@@ -58,6 +58,10 @@ let dataImageList = [
 
     ["naoki","../img/char_naoki_01.png", null],
     ["plakat-prestupnika","../img/plakat_prestupnika_tochno.png", null],
+    ["syringes","../img/shpritsy.png", null],
+    ["nark","../img/POroshok.png", null],
+    ["clip","../img/valessiobrito_Paper_Clip.png", null],
+    ["amulet","../img/kolye.png", null],
 
     ["prop-car-01","../img/car_01.png", null],
     ["prop-car-02","../img/car_02.png", null],
@@ -328,12 +332,6 @@ let description_Scene_06 = [
 ];
 
 
-/*let dataProps_ff_n = [
-    ["naoki",    "prop",    true,true,    0,    868,924,    0,0,0,0,    128,345,0,    1,1,1.55,    "naoki",    "",    256,345,true,    dataNaokiAnimations],
-];*/
-
-
-
 let jsScreen = null;
 let screenContext = null;
 let preloader = null;
@@ -368,6 +366,7 @@ let charNaokiAnim = 0;
 
 let isMenuDisplayed = false;
 let isDialogueDisplayed = false;
+let isPreloaderDisplayed = false;
 
 
 let loc_01_is_visited = false;
@@ -382,6 +381,7 @@ let naoki_talk_ab_yoshi = false;
 let naoki_talk_ab_katana = false;
 let naoki_saw_door = false;
 let naoki_talked_to_barmen = false;
+
 
 class classUserView {
     constructor() {
@@ -515,7 +515,6 @@ class classDialogue {
         }
     }
 }
-
 
 
 class classSceneObject {
@@ -848,59 +847,6 @@ class classScene {
 }
 
 
-/*class classProps {
-    constructor() {
-        this.objectArray = [];
-    }
-
-    objectAdd(object) {
-        this.objectArray.push(object);
-    }
-
-    objectGet(id) {
-        for(let iObject = 0; iObject < this.objectArray.length; iObject++) {
-            //console.log(this.objectArray[iObject].objectId + " | " + id);
-            if(this.objectArray[iObject].objectId === id) {return this.objectArray[iObject];}
-        }
-    }
-
-    propsLoad(data) {
-        let thisScene = this;
-        data.forEach(function(item, i, arr) {
-            thisScene.objectAdd( new classSceneObject(item) );
-        });
-    }
-
-    propsDraw() {
-        this.objectArray.forEach(function(item, i, arr) {
-            item.objectUpdate();
-
-            if(item === charNaoki) {
-                if(charNaoki.objectPositionX <= currentScene.borderLeft) {
-                    charNaoki.objectPositionX = currentScene.borderLeft;
-                    if(charNaokiAnim === 3) {
-                        charNaokiAnim = 1;
-                        charNaoki.objectAnimationCurrent = charNaoki.objectAnimationList[charNaokiAnim];
-                        charNaoki.objectAnimationUpd = true;
-                        charNaoki.objectVectorMovement[0] = 0;
-                    }
-                } else if(charNaoki.objectPositionX >= currentScene.borderRight) {
-                    charNaoki.objectPositionX = currentScene.borderRight;
-                    if(charNaokiAnim === 2) {
-                        charNaokiAnim = 0;
-                        charNaoki.objectAnimationCurrent = charNaoki.objectAnimationList[charNaokiAnim];
-                        charNaoki.objectAnimationUpd = true;
-                        charNaoki.objectVectorMovement[0] = 0;
-                    }
-                }
-            }
-
-            item.objectDraw();
-        });
-    }
-}*/
-
-
 class classMenuButton {
     constructor () {
         this.buttonImage = null;
@@ -1040,30 +986,46 @@ function initScreen() {
     window.onkeyup = function(e) {
         //e.preventDefault();
         //console.log(e.code);
-        switch(e.code) {
-            case "Escape":
-                //isMenuDisplayed = !isMenuDisplayed;
-                //isDialogueDisplayed = !isDialogueDisplayed;
-                //dialogueImageDrawn = false;
-                break;
-            case "KeyA":
-                if(charNaokiAnim === 3) {
-                    charNaokiAnim = 1;
-                    charNaoki.objectAnimationCurrent = charNaoki.objectAnimationList[charNaokiAnim];
-                    charNaoki.objectAnimationUpd = true;
-                    charNaoki.objectVectorMovement[0] = 0;
-                }
-                break;
-            case "KeyD":
-                if(charNaokiAnim === 2) {
-                    charNaokiAnim = 0;
-                    charNaoki.objectAnimationCurrent = charNaoki.objectAnimationList[charNaokiAnim];
-                    charNaoki.objectAnimationUpd = true;
-                    charNaoki.objectVectorMovement[0] = 0;
-                }
-                break;
-            default:break;
+
+
+        if(isPreloaderDisplayed === true) {
+
+        } else if(isDialogueDisplayed === true) {
+
+        } else if(isMenuDisplayed === true) {
+            switch(e.code) {
+                case "Escape":
+                    isMenuDisplayed = false;
+                    break;
+                default:break;
+            }
+        } else {
+            switch(e.code) {
+                case "Escape":
+                    isMenuDisplayed = true;
+                    break;
+                case "KeyA":
+                    if(charNaokiAnim === 3) {
+                        charNaokiAnim = 1;
+                        charNaoki.objectAnimationCurrent = charNaoki.objectAnimationList[charNaokiAnim];
+                        charNaoki.objectAnimationUpd = true;
+                        charNaoki.objectVectorMovement[0] = 0;
+                    }
+                    break;
+                case "KeyD":
+                    if(charNaokiAnim === 2) {
+                        charNaokiAnim = 0;
+                        charNaoki.objectAnimationCurrent = charNaoki.objectAnimationList[charNaokiAnim];
+                        charNaoki.objectAnimationUpd = true;
+                        charNaoki.objectVectorMovement[0] = 0;
+                    }
+                    break;
+                default:break;
+            }
         }
+
+
+
     };
 
 
@@ -1089,9 +1051,63 @@ function resourceOnLoad(e) {
     //preloader.innerHTML = "Loading... " + (loaderNumOfItems / loaderMaxItems * 100 | 0) + "%";
 
     if(loaderNumOfItems === loaderMaxItems) {
+        isPreloaderDisplayed = false;
         //preloader.style.display = "none";
         //drawCall();
     }
+}
+
+
+function preloaderOnLoad(e) {
+// loading data
+    dataImageList.forEach(function(item, i, arr) {
+        loaderMaxItems++;
+        console.log("  loading " + item[1] + " as " + item[0]);
+        item[2] = new Image();
+        item[2].onload = resourceOnLoad;
+        item[2].src = item[1];
+    });
+
+
+    userView = new classUserView();
+    //props = new classProps();
+    currentScene = null;
+    sceneList = [];
+    dialogueList = [];
+
+    // scenes
+    //props.propsLoad( dataProps_ff_n );
+
+    for(let sceneNumber = 0; sceneNumber < 7; sceneNumber++)
+        sceneList.push(new classScene());
+
+    sceneList[0].sceneLoad(description_Scene_00);
+    sceneList[1].sceneLoad(description_Scene_01);
+    sceneList[2].sceneLoad(description_Scene_02);
+    sceneList[3].sceneLoad(description_Scene_03);
+    sceneList[4].sceneLoad(description_Scene_04);
+    sceneList[5].sceneLoad(description_Scene_05);
+    sceneList[6].sceneLoad(description_Scene_06);
+
+    currentScene = sceneList[0];
+
+    for(let diaNumber = 0; diaNumber < dataDialogue.length; diaNumber++)
+        dialogueList.push(new classDialogue(dataDialogue[diaNumber]));
+
+    // menu
+    menuMain = new classMenu();
+
+    // getting objects
+    imgBackground = dataGetFromArray(dataImageList, "bg-grid") [2];
+
+    menuMain.menuBG = dataGetFromArray(dataImageList, "m-background") [2];
+    menuMain.menuGirl = dataGetFromArray(dataImageList, "m-girl") [2];
+    menuMain.menuLogo = dataGetFromArray(dataImageList, "m-logo") [2];
+    //menuMain.menuList = dataGetFromArray(dataImageList, "m-text") [2];
+    dialogueImage = dataGetFromArray(dataImageList, "m-dialogue") [2];
+    katanaImage = dataGetFromArray(dataImageList, "plakat-prestupnika") [2];
+
+    charNaoki = currentScene.objectGet("naoki");
 }
 
 
@@ -1123,7 +1139,32 @@ function drawCall() {
         screenContext.fillText("Device screen ratio is not supported.",80,textOffset+80);
         screenContext.fillText("We're sorry.",80,textOffset+140);
     } else {
-        if(isDialogueDisplayed === true) {
+        if(isPreloaderDisplayed === true) {
+            screenContext.setTransform(1, 0, 0, 1, 0, 0);
+            let bgScale = 0;
+
+            let scrW = jsScreen.width;
+            let scrH = jsScreen.height;
+
+            let imgRatio = preloader.width / preloader.height;
+            let screenRatio = scrW / scrH;
+
+
+            if(screenRatio <= imgRatio) {
+                bgScale = scrH / preloader.height;
+            } else {
+                bgScale = scrW / preloader.width;
+            }
+
+
+            let bgW = preloader.width*bgScale;
+            let bgH = preloader.height*bgScale;
+
+            let bgX = (scrW-bgW) / 2;
+            let bgY = (scrH-bgH) / 2;
+
+            screenContext.drawImage(preloader, bgX, bgY, bgW, bgH);
+        } else if(isDialogueDisplayed === true) {
             screenContext.setTransform(1, 0, 0, 1, 0, 0);
 
             let diaX = jsScreen.width / 2 - dialogueImage.width / 2;
@@ -1138,7 +1179,6 @@ function drawCall() {
 
         } else if(isMenuDisplayed === true) {
                 userView.drawMenu();
-
         } else {
             userView.calcOffset();
             //userView.drawBackground();
@@ -1502,64 +1542,14 @@ function gameChain() {
 // when window onload fired then start to do stuff
 window.onload = function(e) {
     jsScreen = document.getElementById("js-screen");
-    //preloader = document.getElementById("preloader");
 
-
-    userView = new classUserView();
-    //props = new classProps();
-    currentScene = null;
-    sceneList = [];
-    dialogueList = [];
-
-
-    // loading data
-    dataImageList.forEach(function(item, i, arr) {
-        loaderMaxItems++;
-        console.log("  loading " + item[1] + " as " + item[0]);
-        item[2] = new Image();
-        item[2].onload = resourceOnLoad;
-        item[2].src = item[1];
-    });
-
-
-    // scenes
-    //props.propsLoad( dataProps_ff_n );
-
-    for(let sceneNumber = 0; sceneNumber < 7; sceneNumber++)
-        sceneList.push(new classScene());
-
-    sceneList[0].sceneLoad(description_Scene_00);
-    sceneList[1].sceneLoad(description_Scene_01);
-    sceneList[2].sceneLoad(description_Scene_02);
-    sceneList[3].sceneLoad(description_Scene_03);
-    sceneList[4].sceneLoad(description_Scene_04);
-    sceneList[5].sceneLoad(description_Scene_05);
-    sceneList[6].sceneLoad(description_Scene_06);
-
-    currentScene = sceneList[0];
-
-    for(let diaNumber = 0; diaNumber < dataDialogue.length; diaNumber++)
-        dialogueList.push(new classDialogue(dataDialogue[diaNumber]));
-
-    // menu
-    menuMain = new classMenu();
-
-    // getting objects
-    imgBackground = dataGetFromArray(dataImageList, "bg-grid") [2];
-
-    menuMain.menuBG = dataGetFromArray(dataImageList, "m-background") [2];
-    menuMain.menuGirl = dataGetFromArray(dataImageList, "m-girl") [2];
-    menuMain.menuLogo = dataGetFromArray(dataImageList, "m-logo") [2];
-    //menuMain.menuList = dataGetFromArray(dataImageList, "m-text") [2];
-    dialogueImage = dataGetFromArray(dataImageList, "m-dialogue") [2];
-    katanaImage = dataGetFromArray(dataImageList, "plakat-prestupnika") [2];
-
-    charNaoki = currentScene.objectGet("naoki");
-
+    preloader = new Image();
+    preloader.onload = preloaderOnLoad;
+    preloader.src = "../img/preloader(2).jpg";
+    isPreloaderDisplayed = true;
 
     //show body
     document.body.style.display = "block";
-
 
     //init screen
     initScreen();
