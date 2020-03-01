@@ -1,94 +1,95 @@
 //import { dataSceneTest } from "./scene-test";
 
 // TODO data must be in some file or something
+let localDataPath = "";
 
 // id, path, image
 let dataImageList = [
-    //["preloader","../preloader(2).jpg", null],
+    //["preloader",localDataPath+"preloader(2).jpg", null],
 
-    ["m-background","../img/menu-bg.jpg", null],
-    ["m-girl","../img/menu-girl.png", null],
-    ["m-logo","../img/menu-logo.png", null],
-    ["m-new","../img/new-game.png", null],
-    ["m-resume","../img/resume-game.png", null],
-    ["m-settings","../img/settings.png", null],
-    ["m-about","../img/about.png", null],
-    ["m-dialogue","../img/dialogovoe_okno.png", null],
-    ["m-text","../img/menu-text.png", null],
+    ["m-background","img/menu-bg.jpg", null],
+    ["m-girl","img/menu-girl.png", null],
+    ["m-logo","img/menu-logo.png", null],
+    ["m-new","img/new-game.png", null],
+    ["m-resume","img/resume-game.png", null],
+    ["m-settings","img/settings.png", null],
+    ["m-about","img/about.png", null],
+    ["m-dialogue","img/dialogovoe_okno.png", null],
+    ["m-text","img/menu-text.png", null],
 
-    ["bg-grid","../img/bg-grid.png", null],
+    ["bg-grid","img/bg-grid.png", null],
 
-    ["i-mark","../img/geo.png", null],
-    ["i-mark-h","../img/geo-h.png", null],
+    ["i-mark","img/geo.png", null],
+    ["i-mark-h","img/geo-h.png", null],
 
-    ["i-loc-00-street","../img/loc_00_street.jpg", null],
-    ["i-loc-00-hooker-h","../img/hooker-h.png", null],
-    ["i-loc-00-stripes-h","../img/caution-stripes-h.png", null],
-    ["i-loc-00-syringes","../img/syringes.png", null],
-    ["i-loc-00-syringes-h","../img/syringes-h.png", null],
-    ["i-loc-00-paper","../img/garbage-paper.png", null],
-    ["i-loc-00-paper-h","../img/garbage-paper-h.png", null],
+    ["i-loc-00-street","img/loc_00_street.jpg", null],
+    ["i-loc-00-hooker-h","img/hooker-h.png", null],
+    ["i-loc-00-stripes-h","img/caution-stripes-h.png", null],
+    ["i-loc-00-syringes","img/syringes.png", null],
+    ["i-loc-00-syringes-h","img/syringes-h.png", null],
+    ["i-loc-00-paper","img/garbage-paper.png", null],
+    ["i-loc-00-paper-h","img/garbage-paper-h.png", null],
 
-    ["i-loc-01-street","../img/loc_01_street.jpg", null],
-    ["i-loc-01-car-h","../img/car-h.png", null],
+    ["i-loc-01-street","img/loc_01_street.jpg", null],
+    ["i-loc-01-car-h","img/car-h.png", null],
 
-    ["i-loc-02-pereulok","../img/loc_02_pereulok.jpg", null],
-    ["i-loc-02-guard-h","../img/guard-h.png", null],
-    ["i-loc-02-door-h","../img/bar-door-h.png", null],
-    ["i-loc-02-homeless-h","../img/homeless-h.png", null],
+    ["i-loc-02-pereulok","img/loc_02_pereulok.jpg", null],
+    ["i-loc-02-guard-h","img/guard-h.png", null],
+    ["i-loc-02-door-h","img/bar-door-h.png", null],
+    ["i-loc-02-homeless-h","img/homeless-h.png", null],
 
-    ["i-loc-03-bar","../img/loc_03_bar.jpg", null],
-    ["i-loc-03-barmen-h","../img/barmen-h.png", null],
-    ["i-loc-03-vip-h","../img/vip-h.png", null],
+    ["i-loc-03-bar","img/loc_03_bar.jpg", null],
+    ["i-loc-03-barmen-h","img/barmen-h.png", null],
+    ["i-loc-03-vip-h","img/vip-h.png", null],
 
-    ["i-loc-04-pereulok","../img/loc_04_pereulok.jpg", null],
-    ["i-loc-04-closed-door-h","../img/closed-door.png", null],
-    ["i-loc-04-katana-guy-h","../img/katana-guy-h.png", null],
-
-
-    ["i-loc-05-city-l00","../img/loc_05_city_l00.jpg", null],
-    ["i-loc-05-city-l01","../img/loc_05_city_l01.png", null],
-    ["i-loc-05-city-l02","../img/loc_05_city_l02.png", null],
-    ["i-loc-05-door-h","../img/door-to-apt-h.png", null],
+    ["i-loc-04-pereulok","img/loc_04_pereulok.jpg", null],
+    ["i-loc-04-closed-door-h","img/closed-door.png", null],
+    ["i-loc-04-katana-guy-h","img/katana-guy-h.png", null],
 
 
-    ["i-loc-06-apartments-l00","../img/loc_06_apartments_l00.jpg", null],
-    ["i-loc-06-apartments-l01","../img/loc_06_apartments_l01.png", null],
-    ["i-loc-06-door-h","../img/door-to-city-h.png", null],
-    ["i-loc-06-computer-h","../img/computer-h.png", null],
+    ["i-loc-05-city-l00","img/loc_05_city_l00.jpg", null],
+    ["i-loc-05-city-l01","img/loc_05_city_l01.png", null],
+    ["i-loc-05-city-l02","img/loc_05_city_l02.png", null],
+    ["i-loc-05-door-h","img/door-to-apt-h.png", null],
 
-    ["naoki","../img/char_naoki_01.png", null],
-    ["plakat-prestupnika","../img/plakat_prestupnika_tochno.png", null],
-    ["katana","../img/plakat_prestupnika.png", null],
-    ["syringes","../img/shpritsy.png", null],
-    ["nark","../img/POroshok.png", null],
-    ["clip","../img/valessiobrito_Paper_Clip.png", null],
-    ["amulet","../img/kolye.png", null],
 
-    ["prop-car-01","../img/car_01.png", null],
-    ["prop-car-02","../img/car_02.png", null],
-    ["prop-car-03","../img/car_03.png", null],
-    ["prop-car-04","../img/car_04.png", null],
-    ["prop-car-05","../img/car_05.png", null],
+    ["i-loc-06-apartments-l00","img/loc_06_apartments_l00.jpg", null],
+    ["i-loc-06-apartments-l01","img/loc_06_apartments_l01.png", null],
+    ["i-loc-06-door-h","img/door-to-city-h.png", null],
+    ["i-loc-06-computer-h","img/computer-h.png", null],
+
+    ["naoki","img/char_naoki_01.png", null],
+    ["plakat-prestupnika","img/plakat_prestupnika_tochno.png", null],
+    ["katana","img/plakat_prestupnika.png", null],
+    ["syringes","img/shpritsy.png", null],
+    ["nark","img/POroshok.png", null],
+    ["clip","img/valessiobrito_Paper_Clip.png", null],
+    ["amulet","img/kolye.png", null],
+
+    ["prop-car-01","img/car_01.png", null],
+    ["prop-car-02","img/car_02.png", null],
+    ["prop-car-03","img/car_03.png", null],
+    ["prop-car-04","img/car_04.png", null],
+    ["prop-car-05","img/car_05.png", null],
 
 ];
 
 
 let dataSoundList = [
-    //["loc-00","../sfx/street/Dark_Toys.mp3", null],
-    ["loc-00","../sfx/street/Mist.mp3", null],
-    ["loc-01","../sfx/street/Skence - Blue Ghost.mp3", null],
-    ["loc-02","../sfx/street/ROBORG - Creator.mp3", null],
-    ["loc-03","../sfx/bar/Synthwave  Niky Nine - Deadchrome (2019) [Lazerdiscs Records].mp3", null],
-    ["loc-04","../sfx/backstreet/Unsettled Atmosphere - Donn Wilkerson_(zvooq.su).mp3", null],
-    ["loc-05","../sfx/city/Karin Nobbs- Philippe Bestion-Foggy Tower-patefon-net.ru.mp3", null],
-    ["loc-06","../sfx/apartament/It_s_Coming.mp3", null],
+    //["loc-00","sfx/street/Dark_Toys.mp3", null],
+    ["loc-00","sfx/street/Mist.mp3", null],
+    ["loc-01","sfx/street/Skence - Blue Ghost.mp3", null],
+    ["loc-02","sfx/street/ROBORG - Creator.mp3", null],
+    ["loc-03","sfx/bar/Synthwave  Niky Nine - Deadchrome (2019) [Lazerdiscs Records].mp3", null],
+    ["loc-04","sfx/backstreet/Unsettled Atmosphere - Donn Wilkerson_(zvooq.su).mp3", null],
+    ["loc-05","sfx/city/Karin Nobbs- Philippe Bestion-Foggy Tower-patefon-net.ru.mp3", null],
+    ["loc-06","sfx/apartament/It_s_Coming.mp3", null],
 ];
 
 
 let dataVideoList = [
-    ["vid-start","../vid/start03.mp4", null],
-    ["vid-final","../vid/final03.mp4", null],
+    ["vid-start","vid/start03.mp4", null],
+    ["vid-final","vid/final03.mp4", null],
 ];
 
 
@@ -375,6 +376,7 @@ let currentDialogue = null;
 let currentSound = null;
 let dialogueList = null;
 let katanaImage = null;
+let displayingVideo = false;
 
 let loaderMaxItems = 0;
 let loaderNumOfItems = 0;
@@ -1222,7 +1224,7 @@ function preloaderOnLoad(e) {
         console.log("  loading " + item[1] + " as " + item[0]);
         item[2] = new Image();
         item[2].onload = resourceOnLoad;
-        item[2].src = item[1];
+        item[2].src = localDataPath+item[1];
     });
 
     //let snd = new classSound(dataSoundList[0][1]);
@@ -1231,7 +1233,7 @@ function preloaderOnLoad(e) {
     dataSoundList.forEach(function(item, i, arr) {
         console.log("  loading " + item[1] + " as " + item[0]);
         item[2] = new Audio();
-        item[2].src = item[1];
+        item[2].src = localDataPath+item[1];
         item[2].loop = true;
     });
 
@@ -1728,13 +1730,15 @@ function showStartingClip() {
     jsScreen.style.display = "none";
     isMenuDisplayed = false;
     isMainMenu = false;
-    jsVideo.src = "../vid/start03.mp4";
+    displayingVideo = true;
+    jsVideo.src = localDataPath+"vid/example.mp4";
     jsVideo.onended = startGame;
     jsVideo.play();
 }
 
 
 function startGame() {
+    displayingVideo = false;
     jsVideo.style.display = "none";
     jsScreen.style.display = "block";
     currentSound = dataGetFromArray(dataSoundList, "loc-00") [2];
@@ -1744,25 +1748,27 @@ function startGame() {
 }
 
 
-
 function showEndingClip() {
     jsVideo.style.display = "block";
     jsScreen.style.display = "none";
+    displayingVideo = true;
     currentSound.pause();
-    jsVideo.src = "../vid/final03.mp4";
+    jsVideo.src = localDataPath+"vid/example.mp4";
     jsVideo.onended = endGame;
     jsVideo.play();
 }
 
 
 function endGame() {
+    displayingVideo = false;
+    currentSound.play();
     jsVideo.style.display = "none";
     jsScreen.style.display = "block";
 }
 
 
 function gameChain() {
-    drawCall();
+    if(!displayingVideo) drawCall();
 }
 
 
@@ -1774,7 +1780,7 @@ window.onload = function(e) {
 
     preloader = new Image();
     preloader.onload = preloaderOnLoad;
-    preloader.src = "../img/preloader(2).jpg";
+    preloader.src = localDataPath+"img/preloader(2).jpg";
     isPreloaderDisplayed = true;
 
     //show body
