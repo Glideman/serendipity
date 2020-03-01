@@ -51,6 +51,8 @@ let dataImageList = [
     ["i-loc-05-city-l01","img/loc_05_city_l01.png", null],
     ["i-loc-05-city-l02","img/loc_05_city_l02.png", null],
     ["i-loc-05-door-h","img/door-to-apt-h.png", null],
+    ["i-loc-05-bb1","img/bboard1.gif", null],
+    ["i-loc-05-bb2","img/bboard2.gif", null],
 
 
     ["i-loc-06-apartments-l00","img/loc_06_apartments_l00.jpg", null],
@@ -1285,6 +1287,10 @@ function drawCall() {
         let textOffset = 0;
         let textScale = 0;
 
+        screenContext.setTransform(1, 0, 0, 1, 0, 0);
+        screenContext.fillStyle = "black";
+        screenContext.fillRect(0, 0, jsScreen.width, jsScreen.height);
+
         if(screenRatio < 1) {
             let radrot = (-90)*Math.PI/180;
             textScale = jsScreen.height/1024;
@@ -1544,7 +1550,7 @@ function interactWith(object, comment) {
                 obj_h.objectVisible = false;
                 obj_h.objectActive = true;
                 naoki_have_nark = true;
-                console.log("naoki_have_nark" + naoki_have_nark);
+                //console.log("naoki_have_nark" + naoki_have_nark);
                 inventory.objectErase("syringes");
                 inventory.objectErase("clip");
                 openDialogue("dia-f3");
