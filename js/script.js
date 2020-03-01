@@ -349,8 +349,8 @@ let description_Scene_04 = [
 let description_Scene_05 = [
     ["loc-05",    64,2296,    0,0,2560,1080],
     ["i-loc-05-city-l00",    "static",    true,true,    0,    0,0,    0,0,0,0,    0,0,0,    1,1,1,    "i-loc-05-city-l00",    "",    0,0,false,    null],
-    ["i-loc-05-city-bb1",    "static",    true,true,    0,    0,0,    0,0,0,0,    0,0,0,    1,1,1,    "i-loc-05-bb1",    "",    455,256,true,    dataBB1Animations],
-    ["i-loc-05-city-bb2",    "static",    true,true,    0,    455,256,    0,0,0,0,    0,0,0,    1,1,1,    "i-loc-05-bb2",    "",    262,256,true,    dataBB2Animations],["i-loc-05-city-l01",    "static",    true,true,    0,    0,0,    0,0,0,0,    0,0,0,    1,1,1,    "i-loc-05-city-l01",    "",    0,0,false,    null],
+    ["i-loc-05-city-bb1",    "static",    true,true,    0,    1670,104,    0,0,0,0,    0,0,0,    1.048351,1.332031,1,    "i-loc-05-bb1",    "",    455,256,true,    dataBB1Animations],
+    ["i-loc-05-city-bb2",    "static",    true,true,    0,    200,46,    0,0,0,0,    0,0,0,    1.381679,1.433593,1,    "i-loc-05-bb2",    "",    262,256,true,    dataBB2Animations],["i-loc-05-city-l01",    "static",    true,true,    0,    0,0,    0,0,0,0,    0,0,0,    1,1,1,    "i-loc-05-city-l01",    "",    0,0,false,    null],
     ["door-05-04",    "static",    true,true,    0,    0,840,    0,0,0,0,    0,0,0,    1,1,1,    "i-mark",    "",    0,0,false,    null],
     ["door-05-04-h",    "door",    false,true,    0,    0,840,    0,0,128,128,    0,0,0,    1,1,1,    "i-mark-h",    "",    0,0,false,    description_Door_05_04],
     ["loc-05-door-h",    "door",    false,true,    0,    2203,452,    0,0,189,459,    0,0,0,    1,1,1,    "i-loc-05-door-h",    "",    0,0,false,    description_Door_05_06],
@@ -1748,7 +1748,7 @@ function showStartingClip() {
     isMenuDisplayed = false;
     isMainMenu = false;
     displayingVideo = true;
-    jsVideo.src = localDataPath+"vid/1.mp4";
+    jsVideo.src = localDataPath+"vid/example.mp4";
     jsVideo.onended = startGame;
     jsVideo.play();
 }
@@ -1760,7 +1760,7 @@ function startGame() {
     jsScreen.style.display = "block";
     currentSound = dataGetFromArray(dataSoundList, "loc-00") [2];
     currentSound.play();
-    currentScene = sceneList[5];
+    currentScene = sceneList[0];
     charNaoki = currentScene.objectGet("naoki");
 }
 
@@ -1770,7 +1770,7 @@ function showEndingClip() {
     jsScreen.style.display = "none";
     displayingVideo = true;
     currentSound.pause();
-    jsVideo.src = localDataPath+"vid/2.mp4";
+    jsVideo.src = localDataPath+"vid/example.mp4";
     jsVideo.onended = endGame;
     jsVideo.play();
 }
