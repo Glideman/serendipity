@@ -28,11 +28,11 @@ body  {
 }
 
 
-.preloader {
-    display: block;
+.video {
+    #display: none;
     height: 100%;
     width: 100%;
-    background: #c4c4c4;
+    background: #000000;
 
     font-family: Calibri, Serif;
     font-size: 64px;
