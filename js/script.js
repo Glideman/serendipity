@@ -78,26 +78,34 @@ let dataImageList = [
 
 
 let dataSoundList = [
-    //["loc-00","sfx/street/Dark_Toys.mp3", null],
-    ["loc-00","sfx/street/Mist.mp3", null],
-    ["loc-01","sfx/street/Skence - Blue Ghost.mp3", null],
-    ["loc-02","sfx/street/ROBORG - Creator.mp3", null],
-    ["loc-03","sfx/bar/Synthwave  Niky Nine - Deadchrome (2019) [Lazerdiscs Records].mp3", null],
-    ["loc-04","sfx/backstreet/Unsettled Atmosphere - Donn Wilkerson_(zvooq.su).mp3", null],
-    ["loc-05","sfx/city/Karin Nobbs- Philippe Bestion-Foggy Tower-patefon-net.ru.mp3", null],
-    ["loc-06","sfx/apartament/It_s_Coming.mp3", null],
+    ["snd-00","sfx/street/Mist.mp3", null],
+    ["snd-01","sfx/street/Skence - Blue Ghost.mp3", null],
+    ["snd-02","sfx/street/ROBORG - Creator.mp3", null],
+    ["snd-03","sfx/bar/Synthwave  Niky Nine - Deadchrome (2019) [Lazerdiscs Records].mp3", null],
+    ["snd-04","sfx/backstreet/Unsettled Atmosphere - Donn Wilkerson_(zvooq.su).mp3", null],
+    ["snd-05","sfx/city/Karin Nobbs- Philippe Bestion-Foggy Tower-patefon-net.ru.mp3", null],
+    ["snd-06","sfx/apartament/It_s_Coming.mp3", null],
+    ["snd-07","sfx/other/adv_girl_long.wav", null],
+    ["snd-08","sfx/other/adv_girl.wav", null],
 ];
 
 
 let dataVideoList = [
-    ["vid-start","vid/start03.mp4", null],
-    ["vid-final","vid/final03.mp4", null],
+    ["vid-start","vid/1.mp4", null],
+    ["vid-final","vid/2.mp4", null],
 ];
 
 
 
 
 let dataDialogue = [
+    ["dia-starting-00", "Привет!", "Приветствуем Вас в игре Serendipity (часть 1)\nХотите лы Вы узнать управление в игре?", [
+        ["to-dia-s-01","Да, конечно"],["","Нет"]]],
+
+    ["dia-starting-01", "Управление", "A, D - Хотьба влево и вправо\nДля взаимодействия с чем-то или кем-то подойдите ближе\nи кликните правой кнопкой мыши\nПредметы и люди с которыми можно взаимодействовать\nподсвечиваются, если навести на них курсор мыши.", [
+        ["","Ок, понятно"]]],
+
+
     ["dia-00", "Стриптизёрша", "Этот кусок говна тебя выгнал? На этой неделе ему\nзадерживают поставку, теперь всех увольняет.", [
         ["to-dia-01","Далее"]]],
 
@@ -263,6 +271,7 @@ let dataButtonAnimation = [
 
 
 // Описание для переходов между локациями
+let description_Door_00_00 = ["door-00-00","loc-00",868,924];
 let description_Door_00_01 = ["door-00-01-h","loc-01",2431,1034];
 let description_Door_01_00 = ["door-01-00-h","loc-00",64,924];
 let description_Door_00_02 = ["door-00-02-h","loc-02",64,954];
@@ -277,12 +286,49 @@ let description_Door_05_06 = ["loc-05-door-h","loc-06",64,995];
 let description_Door_06_05 = ["loc-06-door-h","loc-05",2231,954];
 
 
-// Описание сцены и объекта сцены
+
+// Описание звуков в сценах
+let dataSoundList_00 = [
+    ["snd-00",1],
+    //["snd-01",1],
+];
+
+let dataSoundList_01 = [
+    ["snd-00",1],
+];
+
+let dataSoundList_02 = [
+    ["snd-02",1],
+];
+
+let dataSoundList_03 = [
+    ["snd-03",1],
+];
+
+let dataSoundList_04 = [
+    ["snd-04",1],
+];
+
+let dataSoundList_05 = [
+    ["snd-05",1],
+    ["snd-07",1],
+    //["snd-05",1],
+];
+
+let dataSoundList_06 = [
+    ["snd-06",1],
+];
+
+
+
+
+
+// Описание сцен
 // id, left right border
 // id, type, visible,active, layer, posx,y, activex,y,w,h, centerx,y,rotation, sizex,y, scale, img id, comment, animation sprite width, height, animation active, other data
 
 let description_Scene_00 = [
-    ["loc-00",    64,2496,    0,0,2560,1080],
+    ["loc-00",    64,2496,    0,0,2560,1080, dataSoundList_00],
     ["loc-00-street",    "static",    true,true,    0,    0,0,    0,0,0,0,    0,0,0,    1,1,1,    "i-loc-00-street",    "",    0,0,false,    null],
     ["door-00-01",    "static",    true,true,    0,    0,800,    0,0,0,0,    0,0,0,    1,1,1,    "i-mark",    "",    0,0,false,    null],
     ["door-00-01-h",    "door",    false,true,    0,    0,800,    0,0,128,128,    0,0,0,    1,1,1,    "i-mark-h",    "",    0,0,false,    description_Door_00_01],
@@ -301,7 +347,7 @@ let description_Scene_00 = [
 
 
 let description_Scene_01 = [
-    ["loc-01",    1080,2496,    0,0,2560,1080],
+    ["loc-01",    1080,2496,    0,0,2560,1080, dataSoundList_01],
     ["loc-01-street",    "static",    true,true,    0,    0,0,    0,0,0,0,    0,0,0,    1,1,1,    "i-loc-01-street",    "",    0,0,false,    null],
     ["door-01-00",    "static",    true,true,    0,    2431,800,    0,0,0,0,    0,0,0,    1,1,1,    "i-mark",    "",    0,0,false,    null],
     ["door-01-00-h",    "door",    false,true,    0,    2431,800,    0,0,128,128,    0,0,0,    1,1,1,    "i-mark-h",    "",    0,0,false,    description_Door_01_00],
@@ -311,7 +357,7 @@ let description_Scene_01 = [
 
 
 let description_Scene_02 = [
-    ["loc-02",    64,2100,    0,0,2560,1080],
+    ["loc-02",    64,2100,    0,0,2560,1080, dataSoundList_02],
     ["loc-02-pereulok",    "static",    true,true,    0,    0,0,    0,0,0,0,    0,0,0,    1,1,1,    "i-loc-02-pereulok",    "",    0,0,false,    null],
     ["door-02-00",    "static",    true,true,    0,    0,800,    0,0,0,0,    0,0,0,    1,1,1,    "i-mark",    "",    0,0,false,    null],
     ["door-02-00-h",    "door",    false,true,    0,    0,800,    0,0,128,128,    0,0,0,    1,1,1,    "i-mark-h",    "",    0,0,false,    description_Door_02_00],
@@ -323,7 +369,7 @@ let description_Scene_02 = [
 
 
 let description_Scene_03 = [
-    ["loc-03",    64,1800,    0,0,2560,1080],
+    ["loc-03",    64,1800,    0,0,2560,1080, dataSoundList_03],
     ["loc-03-bar",    "static",    true,true,    0,    0,0,    0,0,0,0,    0,0,0,    1,1,1,    "i-loc-03-bar",    "",    0,0,false,    null],
     ["door-03-02",    "static",    true,true,    0,    0,800,    0,0,0,0,    0,0,0,    1,1,1,    "i-mark",    "",    0,0,false,    null],
     ["door-03-02-h",    "door",    false,true,    0,    0,800,    0,0,128,128,    0,0,0,    1,1,1,    "i-mark-h",    "",    0,0,false,    description_Door_03_02],
@@ -334,7 +380,7 @@ let description_Scene_03 = [
 
 
 let description_Scene_04 = [
-    ["loc-04",    64,2496,    0,0,2560,1080],
+    ["loc-04",    64,2496,    0,0,2560,1080, dataSoundList_04],
     ["loc-04-pereulok",    "static",    true,true,    0,    0,0,    0,0,0,0,    0,0,0,    1,1,1,    "i-loc-04-pereulok",    "",    0,0,false,    null],
     ["door-04-00",    "static",    true,true,    0,    0,900,    0,0,0,0,    0,0,0,    1,1,1,    "i-mark",    "",    0,0,false,    null],
     ["door-04-00-h",    "door",    false,true,    0,    0,900,    0,0,128,128,    0,0,0,    1,1,1,    "i-mark-h",    "",    0,0,false,    description_Door_04_00],
@@ -347,7 +393,7 @@ let description_Scene_04 = [
 
 
 let description_Scene_05 = [
-    ["loc-05",    64,2296,    0,0,2560,1080],
+    ["loc-05",    64,2296,    0,0,2560,1080, dataSoundList_05],
     ["i-loc-05-city-l00",    "static",    true,true,    0,    0,0,    0,0,0,0,    0,0,0,    1,1,1,    "i-loc-05-city-l00",    "",    0,0,false,    null],
     ["i-loc-05-city-bb1",    "static",    true,true,    0,    1670,104,    0,0,0,0,    0,0,0,    1.048351,1.332031,1,    "i-loc-05-bb1",    "",    455,256,true,    dataBB1Animations],
     ["i-loc-05-city-bb2",    "static",    true,true,    0,    200,46,    0,0,0,0,    0,0,0,    1.381679,1.433593,1,    "i-loc-05-bb2",    "",    262,256,true,    dataBB2Animations],["i-loc-05-city-l01",    "static",    true,true,    0,    0,0,    0,0,0,0,    0,0,0,    1,1,1,    "i-loc-05-city-l01",    "",    0,0,false,    null],
@@ -360,13 +406,14 @@ let description_Scene_05 = [
 
 
 let description_Scene_06 = [
-    ["loc-06",    264,2296,    0,0,2560,1080],
+    ["loc-06",    264,2296,    0,0,2560,1080, dataSoundList_06],
     ["loc-06-apartments-l00",    "static",    true,true,    0,    0,0,    0,0,0,0,    0,0,0,    1,1,1,    "i-loc-06-apartments-l00",    "",    0,0,false,    null],
     ["loc-06-apartments-l01",    "static",    true,true,    0,    0,0,    0,0,0,0,    0,0,0,    1,1,1,    "i-loc-06-apartments-l01",    "",    0,0,false,    null],
     ["loc-06-door-h",    "door",    false,true,    0,    43,385,    0,0,121,647,    0,0,0,    1,1,1,    "i-loc-06-door-h",    "",    0,0,false,    description_Door_06_05],
     ["loc-06-computer-h",    "interactive",    false,true,    0,    1024,265,    0,0,189,459,    0,0,0,    1,1,1,    "i-loc-06-computer-h",    "",    0,0,false,    null],
     ["naoki",    "static",    true,true,    0,    0,0,    0,0,0,0,    128,345,0,    1,1,1.55,    "naoki",    "",    256,345,true,    dataNaokiAnimations],
 ];
+
 
 let jsScreen = null;
 let jsVideo = null;
@@ -823,6 +870,7 @@ class classScene {
         this.borderRight = 0;
         this.objectArray = [];
         this.doorArray = [];
+        this.sounds = [];
         //this.interactiveArray = [];
     }
 
@@ -856,6 +904,7 @@ class classScene {
         thisScene.sceneId = sceneDesc[0];
         thisScene.borderLeft = sceneDesc[1];
         thisScene.borderRight = sceneDesc[2];
+        thisScene.sounds = sceneDesc[7];
 
         for(let iSceneObject = 1; iSceneObject<data.length; iSceneObject++) {
             //console.log(item[1]);
@@ -1294,7 +1343,8 @@ function drawCall() {
     timeElapsed = Date.now() - timeStart;
     let screenRatio = jsScreen.width / jsScreen.height;
 
-    if(screenRatio < 1.75) {
+    //if(screenRatio < 1.75) {
+    if(screenRatio < 1.0) {
         let textOffset = 0;
         let textScale = 0;
 
@@ -1464,11 +1514,18 @@ function interactWith(object, comment) {
         for(let iScene = 0; iScene < sceneList.length; iScene++) {
             //console.log(this.objectArray[iObject].objectId + " | " + id);
             if(sceneList[iScene].sceneId === currentDoor.locationDst) {
-                currentSound.pause();
-                //currentSound.currentTime = 0;
-                currentSound = dataGetFromArray(dataSoundList, currentDoor.locationDst) [2];
-                currentSound.play();
+
+                //currentSound.pause();
+                dataSoundList.forEach(function (item, i, arr) {
+                    item[2].pause();
+                });
+
                 currentScene = sceneList[iScene];
+
+                currentScene.sounds.forEach(function (item, i, arr) {
+                    dataGetFromArray(dataSoundList, item[0]) [2].play();
+                });
+
                 let charNaokiLast = charNaoki;
 
                 charNaokiLast.objectVectorMovement[0] = 0;
@@ -1498,6 +1555,21 @@ function interactWith(object, comment) {
 
     //console.log("you touched " + object.objectId);
     switch (object.objectId) {
+        /*case "starting-o":
+            if(naoki_have_nark === true) {
+                obj_h = currentScene.objectGet("loc-00-hooker-h");
+                obj_h.objectActive = false;
+                obj_h.objectVisible = false;
+                naoki_have_amulet = true;
+                inventory.objectErase("nark");
+                openDialogue("dia-02");
+            } else {
+                obj_h = currentScene.objectGet("loc-00-hooker-h");
+                obj_h.objectActive = false;
+                obj_h.objectVisible = false;
+                openDialogue("dia-00");
+            }
+            break;*/
         case "loc-00-hooker-h":
             //console.log("naoki_have_nark " + naoki_have_nark);
             if(naoki_have_nark === true) {
@@ -1611,6 +1683,7 @@ function interactWith(object, comment) {
         case "loc-05-door-h":
             if(naoki_saw_door === true) ;
             else {
+                drawCall();
                 openDialogue("dia-a1");
                 naoki_saw_door = true;
             }
@@ -1657,6 +1730,7 @@ function interactDialogue(mouX, mouY) {
 
     if(currentOption === null) return;
     switch(currentOption.optionTarget) {
+        case "to-dia-s-01": openDialogue("dia-starting-01"); break;
         case "to-dia-f2": openDialogue("dia-f2"); break;
         case "to-dia-f4": openDialogue("dia-f4"); break;
         case "to-dia-f5": openDialogue("dia-f5"); break;
@@ -1744,11 +1818,11 @@ function interactDialogue(mouX, mouY) {
 
 function showStartingClip() {
     jsVideo.style.display = "block";
-    jsScreen.style.display = "none";
-    isMenuDisplayed = false;
-    isMainMenu = false;
+    //jsScreen.style.display = "none";
+        isMenuDisplayed = false;
+        isMainMenu = false;
     displayingVideo = true;
-    jsVideo.src = localDataPath+"vid/example.mp4";
+    jsVideo.src = localDataPath+"vid/1.mp4";
     jsVideo.onended = startGame;
     jsVideo.play();
 }
@@ -1757,30 +1831,43 @@ function showStartingClip() {
 function startGame() {
     displayingVideo = false;
     jsVideo.style.display = "none";
-    jsScreen.style.display = "block";
-    currentSound = dataGetFromArray(dataSoundList, "loc-00") [2];
-    currentSound.play();
+    //jsScreen.style.display = "block";
+
+    //interactWith(new classSceneObject(["starting-o","interactive",false,false,0,0,0,0,0,0,0,0,0,0,0,0,0,"","",0,0,false,null]));
+
     currentScene = sceneList[0];
+
+    currentScene.sounds.forEach(function (item, i, arr) {
+        dataGetFromArray(dataSoundList, item[0]) [2].play();
+    });
+
     charNaoki = currentScene.objectGet("naoki");
+    drawCall();
+    openDialogue("dia-starting-00");
 }
 
 
 function showEndingClip() {
     jsVideo.style.display = "block";
     jsScreen.style.display = "none";
+    clearInterval(displayTimer);
     displayingVideo = true;
-    currentSound.pause();
-    jsVideo.src = localDataPath+"vid/example.mp4";
-    jsVideo.onended = endGame;
+    dataSoundList.forEach(function (item, i, arr) {
+        item[2].pause();
+    });
+    jsVideo.src = localDataPath+"vid/2.mp4";
+    jsVideo.onended = null;//endGame;
     jsVideo.play();
 }
 
 
 function endGame() {
     displayingVideo = false;
-    currentSound.play();
+    //currentSound.play();
+    //isMenuDisplayed = true;
+    //isMainMenu = true;
     jsVideo.style.display = "none";
-    jsScreen.style.display = "block";
+    //jsScreen.style.display = "block";
 }
 
 
