@@ -1,11 +1,11 @@
-//import { dataSceneTest } from "./scene-test";
 
-// TODO data must be in some file or something
 let localDataPath = "";
 
 // id, path, image
 let dataImageList = [
-    //["preloader",localDataPath+"preloader(2).jpg", null],
+    ["preloader","img/preloader(2).jpg", null],
+    ["preloader-progressbar","img/progressbar.png", null],
+    ["preloader-progressbar-decor","img/progressbar_decor.png", null],
 
     ["m-background","img/menu-bg.jpg", null],
     ["m-girl","img/menu-girl.png", null],
@@ -46,14 +46,12 @@ let dataImageList = [
     ["i-loc-04-closed-door-h","img/closed-door.png", null],
     ["i-loc-04-katana-guy-h","img/katana-guy-h.png", null],
 
-
     ["i-loc-05-city-l00","img/loc_05_city_l00.jpg", null],
     ["i-loc-05-city-l01","img/loc_05_city_l01.png", null],
     ["i-loc-05-city-l02","img/loc_05_city_l02.png", null],
     ["i-loc-05-door-h","img/door-to-apt-h.png", null],
     ["i-loc-05-bb1","img/bb1.png", null],
     ["i-loc-05-bb2","img/bb2.png", null],
-
 
     ["i-loc-06-apartments-l00","img/loc_06_apartments_l00.jpg", null],
     ["i-loc-06-apartments-l01","img/loc_06_apartments_l01.png", null],
@@ -298,7 +296,7 @@ let dataSoundList_01 = [
 ];
 
 let dataSoundList_02 = [
-    ["snd-02",1],
+    ["snd-00",1],
 ];
 
 let dataSoundList_03 = [
@@ -419,8 +417,11 @@ let jsScreen = null;
 let jsVideo = null;
 let screenContext = null;
 let preloader = null;
+let preloaderPbDecor = null;
+let preloaderPb = null;
 let inventory = null;
 let preloaderStatus = "";
+let preloaderPercent = "";
 let imgBackground = null;
 
 let userView = null;
@@ -1196,7 +1197,7 @@ function initScreen() {
 
         } else if(isDialogueDisplayed === true) {
 
-        } else if(isMenuDisplayed === true && isMainMenu === false) {
+        } /*else if(isMenuDisplayed === true && isMainMenu === false) {
             switch(e.code) {
                 case "Escape":
                     isMenuDisplayed = false;
@@ -1213,20 +1214,20 @@ function initScreen() {
                     break;
                 default:break;
             }
-        } else {
+        }*/ else {
             switch(e.code) {
                 case "Escape":
-                    isMenuDisplayed = true;
-                    charNaoki.objectVectorMovement[0] = 0;
-                    if(charNaokiAnim === 3) {
-                        charNaokiAnim = 1;
-                        charNaoki.objectAnimationCurrent = charNaoki.objectAnimationList[charNaokiAnim];
-                        charNaoki.objectAnimationUpd = true;
-                    } else if(charNaokiAnim === 2) {
-                        charNaokiAnim = 0;
-                        charNaoki.objectAnimationCurrent = charNaoki.objectAnimationList[charNaokiAnim];
-                        charNaoki.objectAnimationUpd = true;
-                    }
+                    //isMenuDisplayed = true;
+                    //charNaoki.objectVectorMovement[0] = 0;
+                    //if(charNaokiAnim === 3) {
+                    //    charNaokiAnim = 1;
+                    //    charNaoki.objectAnimationCurrent = charNaoki.objectAnimationList[charNaokiAnim];
+                    //    charNaoki.objectAnimationUpd = true;
+                    //} else if(charNaokiAnim === 2) {
+                    //    charNaokiAnim = 0;
+                    //    charNaoki.objectAnimationCurrent = charNaoki.objectAnimationList[charNaokiAnim];
+                    //    charNaoki.objectAnimationUpd = true;
+                    //}
                     break;
                 case "KeyA":
                     if(charNaokiAnim === 3) {
@@ -1271,7 +1272,8 @@ function resizeScreen() {
 
 function resourceOnLoad(e) {
     loaderNumOfItems++;
-    preloaderStatus = "Загрузка... " + (loaderNumOfItems / loaderMaxItems * 100 | 0) + "%";
+    preloaderPercent = (loaderNumOfItems / loaderMaxItems * 100 | 0);
+    preloaderStatus = "Загрузка... " + preloaderPercent + "%";
     drawCall();
     if(loaderNumOfItems === loaderMaxItems) {
         isPreloaderDisplayed = false;
@@ -1282,11 +1284,13 @@ function resourceOnLoad(e) {
 function preloaderOnLoad(e) {
 // loading data
     dataImageList.forEach(function(item, i, arr) {
-        loaderMaxItems++;
-        console.log("  loading " + item[1] + " as " + item[0]);
-        item[2] = new Image();
-        item[2].onload = resourceOnLoad;
-        item[2].src = localDataPath+item[1];
+        //if(item[2] != null) {
+            loaderMaxItems++;
+            console.log("  loading " + item[1] + " as " + item[0]);
+            item[2] = new Image();
+            item[2].onload = resourceOnLoad;
+            item[2].src = localDataPath+item[1];
+        //}
     });
 
     //let snd = new classSound(dataSoundList[0][1]);
@@ -1344,7 +1348,7 @@ function drawCall() {
     let screenRatio = jsScreen.width / jsScreen.height;
 
     //if(screenRatio < 1.75) {
-    if(screenRatio < 1.0) {
+    if(screenRatio < 1.0 || screenRatio > 2.0) {
         let textOffset = 0;
         let textScale = 0;
 
@@ -1375,6 +1379,7 @@ function drawCall() {
         if(isPreloaderDisplayed === true) {
             screenContext.setTransform(1, 0, 0, 1, 0, 0);
             let bgScale = 0;
+            let pbScale = 0;
 
             let scrW = jsScreen.width;
             let scrH = jsScreen.height;
@@ -1389,6 +1394,7 @@ function drawCall() {
                 bgScale = scrW / preloader.width;
             }
 
+            pbScale = scrW / preloaderPbDecor.width;
 
             let bgW = preloader.width*bgScale;
             let bgH = preloader.height*bgScale;
@@ -1396,10 +1402,25 @@ function drawCall() {
             let bgX = (scrW-bgW) / 2;
             let bgY = (scrH-bgH) / 2;
 
+
+            let pbW = preloaderPbDecor.width*pbScale;
+            let pbH = preloaderPbDecor.height*pbScale;
+
+            let pbX = (scrW-pbW) / 2;
+            let pbY = scrH-pbH;//(scrH-pbH) / 2;
+
             screenContext.drawImage(preloader, bgX, bgY, bgW, bgH);
-            screenContext.fillStyle = "white";
-            screenContext.font = "48px calibri";
-            screenContext.fillText(preloaderStatus,jsScreen.width/2,jsScreen.height-80);
+            screenContext.drawImage(preloaderPbDecor, pbX, pbY, pbW, pbH);
+
+            screenContext.drawImage(preloaderPb,
+                0, 0,
+                preloaderPb.width/100*preloaderPercent, preloaderPb.height,
+                pbX,pbY,
+                pbW/100*preloaderPercent, pbH);
+
+            //screenContext.fillStyle = "white";
+            //screenContext.font = "48px calibri";
+            //screenContext.fillText(preloaderStatus,jsScreen.width/2,jsScreen.height-80);
         } else if(isDialogueDisplayed === true) {
             screenContext.setTransform(1, 0, 0, 1, 0, 0);
 
@@ -1881,11 +1902,23 @@ window.onload = function(e) {
     jsScreen = document.getElementById("js-screen");
     jsVideo = document.getElementById("js-video");
 
-
-    preloader = new Image();
-    preloader.onload = preloaderOnLoad;
-    preloader.src = localDataPath+"img/preloader(2).jpg";
     isPreloaderDisplayed = true;
+
+    let preloader_dt = dataGetFromArray(dataImageList, "preloader");
+    preloader_dt [2] = new Image();
+    preloader_dt [2].onload = preloaderOnLoad;
+    preloader_dt [2].src = localDataPath + preloader_dt [1];
+    preloader = preloader_dt [2];
+
+    preloader_dt = dataGetFromArray(dataImageList, "preloader-progressbar-decor");
+    preloader_dt [2] = new Image();
+    preloader_dt [2].src = localDataPath + preloader_dt [1];
+    preloaderPbDecor = preloader_dt [2];
+
+    preloader_dt = dataGetFromArray(dataImageList, "preloader-progressbar");
+    preloader_dt [2] = new Image();
+    preloader_dt [2].src = localDataPath + preloader_dt [1];
+    preloaderPb = preloader_dt [2];
 
     //show body
     document.body.style.display = "block";
