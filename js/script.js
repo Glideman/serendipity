@@ -309,8 +309,7 @@ let dataSoundList_04 = [
 
 let dataSoundList_05 = [
     ["snd-05",1],
-    ["snd-07",1],
-    //["snd-05",1],
+    //["snd-07",1],
 ];
 
 let dataSoundList_06 = [
@@ -1339,9 +1338,6 @@ function preloaderOnLoad(e) {
     menuMain.menuList = dataGetFromArray(dataImageList, "m-text") [2];
     dialogueImage = dataGetFromArray(dataImageList, "m-dialogue") [2];
     katanaImage = dataGetFromArray(dataImageList, "plakat-prestupnika") [2];
-
-    preloaderPbDecor = dataGetFromArray(dataImageList, "preloader-progressbar-decor") [2];
-    preloaderPb = dataGetFromArray(dataImageList, "preloader-progressbar") [2];
 }
 
 
@@ -1390,35 +1386,38 @@ function drawCall() {
             let screenRatio = scrW / scrH;
 
 
-            if(screenRatio <= imgRatio) {
+            if (screenRatio <= imgRatio) {
                 bgScale = scrH / preloader.height;
             } else {
                 bgScale = scrW / preloader.width;
             }
 
-            pbScale = scrW / preloaderPbDecor.width;
 
-            let bgW = preloader.width*bgScale;
-            let bgH = preloader.height*bgScale;
+            let bgW = preloader.width * bgScale;
+            let bgH = preloader.height * bgScale;
 
-            let bgX = (scrW-bgW) / 2;
-            let bgY = (scrH-bgH) / 2;
-
-
-            let pbW = preloaderPbDecor.width*pbScale;
-            let pbH = preloaderPbDecor.height*pbScale;
-
-            let pbX = (scrW-pbW) / 2;
-            let pbY = scrH-pbH;//(scrH-pbH) / 2;
+            let bgX = (scrW - bgW) / 2;
+            let bgY = (scrH - bgH) / 2;
 
             screenContext.drawImage(preloader, bgX, bgY, bgW, bgH);
-            screenContext.drawImage(preloaderPbDecor, pbX, pbY, pbW, pbH);
 
-            screenContext.drawImage(preloaderPb,
-                0, 0,
-                preloaderPb.width/100*preloaderPercent, preloaderPb.height,
-                pbX,pbY,
-                pbW/100*preloaderPercent, pbH);
+                if (preloaderPbDecor != null && preloaderPb != null) {
+                    pbScale = scrW / preloaderPbDecor.width;
+
+                let pbW = preloaderPbDecor.width * pbScale;
+                let pbH = preloaderPbDecor.height * pbScale;
+
+                let pbX = (scrW - pbW) / 2;
+                let pbY = scrH - pbH;//(scrH-pbH) / 2;
+
+                screenContext.drawImage(preloaderPbDecor, pbX, pbY, pbW, pbH);
+
+                screenContext.drawImage(preloaderPb,
+                    0, 0,
+                    preloaderPb.width / 100 * preloaderPercent, preloaderPb.height,
+                    pbX, pbY,
+                    pbW / 100 * preloaderPercent, pbH);
+            }
 
             //screenContext.fillStyle = "white";
             //screenContext.font = "48px calibri";
@@ -1921,6 +1920,9 @@ window.onload = function(e) {
     preloader_dt [2] = new Image();
     preloader_dt [2].src = localDataPath + preloader_dt [1];
     preloaderPb = preloader_dt [2];*/
+
+    preloaderPbDecor = dataGetFromArray(dataImageList, "preloader-progressbar-decor") [2];
+    preloaderPb = dataGetFromArray(dataImageList, "preloader-progressbar") [2];
 
     //show body
     document.body.style.display = "block";
