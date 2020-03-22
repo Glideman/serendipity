@@ -1340,6 +1340,8 @@ function preloaderOnLoad(e) {
     dialogueImage = dataGetFromArray(dataImageList, "m-dialogue") [2];
     katanaImage = dataGetFromArray(dataImageList, "plakat-prestupnika") [2];
 
+    preloaderPbDecor = dataGetFromArray(dataImageList, "preloader-progressbar-decor") [2];
+    preloaderPb = dataGetFromArray(dataImageList, "preloader-progressbar") [2];
 }
 
 
@@ -1910,7 +1912,7 @@ window.onload = function(e) {
     preloader_dt [2].src = localDataPath + preloader_dt [1];
     preloader = preloader_dt [2];
 
-    preloader_dt = dataGetFromArray(dataImageList, "preloader-progressbar-decor");
+    /*preloader_dt = dataGetFromArray(dataImageList, "preloader-progressbar-decor");
     preloader_dt [2] = new Image();
     preloader_dt [2].src = localDataPath + preloader_dt [1];
     preloaderPbDecor = preloader_dt [2];
@@ -1918,7 +1920,7 @@ window.onload = function(e) {
     preloader_dt = dataGetFromArray(dataImageList, "preloader-progressbar");
     preloader_dt [2] = new Image();
     preloader_dt [2].src = localDataPath + preloader_dt [1];
-    preloaderPb = preloader_dt [2];
+    preloaderPb = preloader_dt [2];*/
 
     //show body
     document.body.style.display = "block";
