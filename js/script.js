@@ -1292,6 +1292,9 @@ function preloaderOnLoad(e) {
         }
     });
 
+    preloaderPbDecor = dataGetFromArray(dataImageList, "preloader-progressbar-decor") [2];
+    preloaderPb = dataGetFromArray(dataImageList, "preloader-progressbar") [2];
+
     //let snd = new classSound(dataSoundList[0][1]);
     //snd.play();
 
@@ -1401,8 +1404,8 @@ function drawCall() {
 
             screenContext.drawImage(preloader, bgX, bgY, bgW, bgH);
 
-                if (preloaderPbDecor != null && preloaderPb != null) {
-                    pbScale = scrW / preloaderPbDecor.width;
+            if (preloaderPbDecor != null && preloaderPb != null) {
+                pbScale = scrW / preloaderPbDecor.width;
 
                 let pbW = preloaderPbDecor.width * pbScale;
                 let pbH = preloaderPbDecor.height * pbScale;
@@ -1920,9 +1923,6 @@ window.onload = function(e) {
     preloader_dt [2] = new Image();
     preloader_dt [2].src = localDataPath + preloader_dt [1];
     preloaderPb = preloader_dt [2];*/
-
-    preloaderPbDecor = dataGetFromArray(dataImageList, "preloader-progressbar-decor") [2];
-    preloaderPb = dataGetFromArray(dataImageList, "preloader-progressbar") [2];
 
     //show body
     document.body.style.display = "block";
