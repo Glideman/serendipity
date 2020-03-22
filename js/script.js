@@ -1284,13 +1284,13 @@ function resourceOnLoad(e) {
 function preloaderOnLoad(e) {
 // loading data
     dataImageList.forEach(function(item, i, arr) {
-        //if(item[2] != null) {
+        if(item[2] == null) {
             loaderMaxItems++;
             console.log("  loading " + item[1] + " as " + item[0]);
             item[2] = new Image();
             item[2].onload = resourceOnLoad;
             item[2].src = localDataPath+item[1];
-        //}
+        }
     });
 
     //let snd = new classSound(dataSoundList[0][1]);
